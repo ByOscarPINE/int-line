@@ -9,6 +9,7 @@ const Button = styled.button`
 
     cursor: pointer;
     transition: ease-out 0.5s;
+    border: none;
 
     &:hover {
         box-shadow: inset 0 -100px 0 0 #D5D5D5;

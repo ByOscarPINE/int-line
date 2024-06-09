@@ -4,17 +4,14 @@ import styled from 'styled-components'
 const Div1 = styled.div`
     display: flex;
     height: auto;
-    background-color: green;
 `
 
 const Aside1 = styled.aside`
     width: 50%;
-    background-color: green;
 `
 
 const Aside2 = styled.aside`
     width: 50%;
-    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;

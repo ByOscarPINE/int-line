@@ -4,18 +4,17 @@ import styled from 'styled-components'
 const Div1 = styled.div`
     width: 405.33px;
     height: 252px;
-    background-color: purple;
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
     border-radius: 12px;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
 `
 
 const Div2 = styled.div`
     width: 341px;
     height: auto;
-    background-color: red;
     display: flex;
     margin-top: 25px;
 `
@@ -37,13 +36,11 @@ const Div3 = styled.div`
 const Div4 = styled.div`
     width: 45px;
     height: 45px;
-    background-color: gray;
     text-align: left;
 `
 
 const Div5 = styled.div`
     width: 100px;
-    background-color: blue;
     text-align: left;
     justify-content: center;
     display: flex;
@@ -51,13 +48,11 @@ const Div5 = styled.div`
 `
 
 const H4 = styled.h4`
-    background: green;
     margin: 0px;
     font-size: 16px;
 `
 
 const P = styled.p`
-    background: gray;
     margin: 0px;
     font-size: 16px;
 `

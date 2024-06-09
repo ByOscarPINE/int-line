@@ -9,6 +9,12 @@ const Button = styled.button`
     background-color: #000000;
     cursor: pointer;
     color: white;
+    border: black;
+    transition: ease-out 0.5s;
+
+    &:hover {
+      box-shadow: inset 0 -100px 0 0 gray;
+    }
 
     &:active {
         transform: scale(0.9);

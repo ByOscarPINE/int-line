@@ -8,7 +8,6 @@ const Div1 = styled.div`
 `
 const H1 = styled.h1`
     font-size: 35px;
-    background: red;
     height: 44px;
     margin: 0;
     border-radius: 10px;
@@ -16,7 +15,6 @@ const H1 = styled.h1`
 
 const P1 = styled.p`
     margin: 0;
-    background: blue;
     height: 44px;
     border-radius: 10px;
 `

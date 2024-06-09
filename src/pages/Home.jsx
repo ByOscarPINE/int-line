@@ -11,7 +11,6 @@ const Div1 = styled.div`
     margin-top: 164px;
     height: auto;
     width: 100%;
-    background-color: gray;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -22,13 +21,11 @@ const Div2 = styled.div`
     height: auto;
     width: 857px;
     padding: 10px;
-    background-color: green;
 `
 const Div3 = styled.div`
     margin-top: 110px;
     width: auto;
     height: 576px;
-    background-color: blue;
 `
 
 const Div4 = styled.div`
@@ -36,7 +33,6 @@ const Div4 = styled.div`
     margin-top: 188px;
     width: 733px;
     height: 88px;
-    background-color: purple;
     margin-left: 80px;
     border-radius: 10px;
 `
@@ -46,7 +42,6 @@ const Div5 = styled.div`
     margin-bottom: 52px;
     width: 100%;
     height: 252px;
-    background-color: lightblue;
     display: flex;
     justify-content: center;
     gap: 32px;
@@ -55,11 +50,10 @@ const Div5 = styled.div`
 
 const Home = () => {
 
-    
-
   return (
+    <>
+    <NavbarP/>
     <Div1>
-        <NavbarP/>
         <Div2>
             <HomeP/>
         </Div2>
@@ -77,8 +71,9 @@ const Home = () => {
             <HomeF text="“Como sociedad debemos apoyarnos, ese siempre lo tuvimos en mente“."
                 text1="Alexis R." text2="Lider"></HomeF>
         </Div5>  
-        <Footer />
     </Div1>
+    <Footer />
+    </>
   )
 }
 

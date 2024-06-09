@@ -7,7 +7,6 @@ const Div1 = styled.div`
     bottom: 0; 
     height: 264px;
     display: flex;
-    background-color: red;
 `
 
 const H1 = styled.h2`
@@ -21,7 +20,6 @@ const Div2 = styled.div`
     width: 50%;
     display: flex;
     flex-direction: column;
-    background-color: blue;
 `
 
 const Div3 = styled.div`
@@ -30,7 +28,6 @@ const Div3 = styled.div`
     width: auto;
     height: 40px;
     display: flex;
-    background-color: red;
     gap: 8px;
 `
 
@@ -39,19 +36,26 @@ const Div4 = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
 `
+const Line = styled.div`
+    background-color: #E6E6E6;
+    width: 90%;
+    height: 2px;
+    margin: auto;
+`;
 
 const Footer = () => {
 
   const buttons = [
     { Imref: './img/FaceIcon.png', Fref: '/about', otraProp2: 'valor2' },
-    { Imref: './img/InstaIcon.png', otraProp: 'valor3', otraProp2: 'valor4' },
     { Imref: './img/YouIcon.png', otraProp: 'valor5', otraProp2: 'valor6' },
+    { Imref: './img/InstaIcon.png', otraProp: 'valor3', otraProp2: 'valor4' },
   ];
 
 
   return (
+    <>
+    <Line />
     <Div1>
       <Div2>
         <H1>LIFELINE</H1>
@@ -64,6 +68,7 @@ const Footer = () => {
       <Div4>
       </Div4>
     </Div1>
+    </>
   )
 }
 

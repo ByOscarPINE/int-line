@@ -9,6 +9,7 @@ const Button = styled.button`
     justify-content: center;
     align-items: center;
     display: flex;
+    background-color: transparent;
 `
 
 const Img = styled.img`
