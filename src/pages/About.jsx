@@ -23,6 +23,9 @@ const H1 = styled.h1`
     text-align: left;
     width: 624px;
     margin-bottom: 0px;
+    font-size: 64px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
 `
 
 const P = styled.p`
@@ -30,6 +33,8 @@ const P = styled.p`
     text-align: left;
     width: 624px;
     font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
 `
 
 const AsideR = styled.aside`
@@ -56,11 +61,13 @@ const About = () => {
             Somos tu aliado en la búsqueda de respuestas sobre tu salud. 
             Nuestra plataforma te ofrece un diagnóstico rápido y preciso 
             de posibles enfermedades basado en síntomas específicos que experimentes.
+            <br />
             Con una interfaz fácil de usar y una base de datos robusta, 
             nuestro sistema utiliza algoritmos avanzados respaldados por 
             datos médicos actualizados para proporcionarte información 
             confiable sobre tus preocupaciones de salud.
-
+            <br />
+            <br />
             En LIFELINE, creemos en el poder de la información y la 
             tecnología para empoderarte en tu viaje hacia el bienestar. 
             Ya sea que estés buscando entender mejor tus síntomas, 

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Div1 = styled.div`
+
     width: 405.33px;
     height: 252px;
     justify-content: center;
@@ -22,9 +23,12 @@ const H2 =styled.h2`
     font-size: 20px;
     margin: 0px;
     text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
 `
 
 const Div3 = styled.div`
+
     width: 341px;
     height: 50px;
     display: flex;
@@ -50,11 +54,16 @@ const Div5 = styled.div`
 const H4 = styled.h4`
     margin: 0px;
     font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
 `
 
 const P = styled.p`
     margin: 0px;
     font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #828282;
 `
 
 const HomeF = ({text,text1,text2}) => {

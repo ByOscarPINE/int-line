@@ -7,16 +7,20 @@ const Div1 = styled.div`
     border-radius: 10px;
 `
 const H1 = styled.h1`
-    font-size: 35px;
-    height: 44px;
-    margin: 0;
-    border-radius: 10px;
+    font-size: 40px;
+    margin-bottom: 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
 `
 
 const P1 = styled.p`
     margin: 0;
     height: 44px;
     border-radius: 10px;
+    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #828282;
 `
 
 

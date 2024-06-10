@@ -11,6 +11,7 @@ const Button = styled.button`
     color: white;
     border: black;
     transition: ease-out 0.5s;
+    padding: 14px 24px;
 
     &:hover {
       box-shadow: inset 0 -100px 0 0 gray;
@@ -24,6 +25,8 @@ const Button = styled.button`
 const P = styled.p`
     margin: 0px;
     font-size: 16px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
 `
        
 const ButtonLD = ({textLD, LDref}) => {

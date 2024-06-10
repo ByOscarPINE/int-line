@@ -10,6 +10,7 @@ const Button = styled.button`
     cursor: pointer;
     transition: ease-out 0.5s;
     border: none;
+    padding: 8px 16px;
 
     &:hover {
         box-shadow: inset 0 -100px 0 0 #D5D5D5;
@@ -23,6 +24,8 @@ const Button = styled.button`
 const P = styled.p`
     margin: 0px;
     font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
 `
        
 const ButtonB = ({textB, Bref, currentPath}) => {

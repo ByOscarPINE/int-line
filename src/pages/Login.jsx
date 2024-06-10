@@ -12,31 +12,34 @@ const Div1 = styled.div`
 `
 
 const AsideL = styled.aside`
+    width: 50%;
     margin-top: 88px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    margin-left: 80px;
 `
 
 const H1 = styled.h1`
-    margin-left: 80px;
     text-align: left;
     width: 624px;
     margin-bottom: 0px;
+    font-size: 64px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
 `
 
 const Div2 = styled.div`
-    margin-left: 80px;
     margin-top: 92px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 624px;
 `
 
 const P = styled.p`
     text-align: left;
     width: 624px;
     font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
 `
 
 const Input = styled.input`
@@ -46,12 +49,12 @@ const Input = styled.input`
     border: 1.5px solid #E0E0E0;
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
     margin-bottom: 24px;
-    padding-left: 16px;
+    
 `
 
 const AsideR = styled.aside`
     margin-top: 88px;
-    width: 100%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,6 +64,7 @@ const Img = styled.img`
     border-radius: 8px;
     width: 508px;
 `
+
 
 const Login = () => {
   return (

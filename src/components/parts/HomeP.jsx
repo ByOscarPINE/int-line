@@ -4,14 +4,16 @@ import ButtonLD from '../buttons/ButtonLD'
 
 const H11 = styled.h1`
     margin-top: 0px;
-    height: 64px;
-    font-family: Arial, sans-serif;
+    font-size: 64px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
 `
 
 const P1 = styled.div`
     margin-top: 25px;
     font-size: 24px;
-    font-family: Inter, Regular;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
     color: #828282;
 `
 
@@ -25,7 +27,7 @@ const HomeP = () => {
         <H11>LIFELINE</H11>
         <P1>Diagnósticos rápidos a tus manos</P1>
         <Div4>
-            <ButtonLD textLD={"Diagnosticar"}/>
+            <ButtonLD textLD={"Diagnosticar"} LDref={"ListH"}/>
         </Div4>
     </div>
   )

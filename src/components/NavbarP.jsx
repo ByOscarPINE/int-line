@@ -34,6 +34,8 @@ const Div4 = styled.div`
 const H1 = styled.h1`
   font-size: 20px;
   margin-left: 80px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
 `
 
 

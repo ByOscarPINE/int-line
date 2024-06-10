@@ -13,13 +13,20 @@ const Aside1 = styled.aside`
 const Aside2 = styled.aside`
     width: 50%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+`
+
+const H1 = styled.h1`
+    width: 60%;
+    font-size: 40px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-align: center;
 `
 
 const Img = styled.img`
     width: 710px;
-    height: 576px;
 `
 
 const HomeS = () => {
@@ -30,8 +37,8 @@ const HomeS = () => {
             <Img src='./img/HomeI.svg'></Img>
         </Aside1>
         <Aside2>
-            <h1>UN EVALUADOR MEDICO HECHO PARA PERSONAL MEDICO CON EL OBJETIVO DE 
-            QUE TODOS GOZEMOS DE BUENA SALUD.</h1>
+            <H1>UN EVALUADOR MEDICO HECHO PARA PERSONAL MEDICO CON EL OBJETIVO DE 
+            QUE TODOS GOZEMOS DE BUENA SALUD.</H1>
         </Aside2>
     </Div1>
   )

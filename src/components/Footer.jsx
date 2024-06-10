@@ -14,6 +14,9 @@ const H1 = styled.h2`
     height: 36px;
     margin-top: 52px;
     margin-left: 80px;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
 `
 
 const Div2 = styled.div`

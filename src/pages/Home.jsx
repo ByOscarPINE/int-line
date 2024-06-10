@@ -38,7 +38,7 @@ const Div4 = styled.div`
 `
 
 const Div5 = styled.div`
-    margin-top: 40px;
+    margin-top: 60px;
     margin-bottom: 52px;
     width: 100%;
     height: 252px;
@@ -65,7 +65,7 @@ const Home = () => {
         </Div4>
         <Div5>
             <HomeF text="“La tecnología en las manos correctas logra
-                resultados increíbles.”" text1="Oscar S." text2="Desarrolador"></HomeF>
+                resultados increíbles.”" text1="Oscar S." text2="Desarrollador"></HomeF>
             <HomeF text="“Teníamos una meta clara y no paramos hasta cumplirla”."
                 text1="Guillermo G." text2="Disenador"></HomeF>
             <HomeF text="“Como sociedad debemos apoyarnos, ese siempre lo tuvimos en mente“."

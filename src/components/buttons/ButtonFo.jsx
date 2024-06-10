@@ -10,6 +10,7 @@ const Button = styled.button`
     align-items: center;
     display: flex;
     background-color: transparent;
+    border: none;
 `
 
 const Img = styled.img`
