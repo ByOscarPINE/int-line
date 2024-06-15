@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import ButtonNS from './buttons/ButtonNS'
+import ButtonNS from '../buttons/ButtonNS'
 
 const Div1 = styled.div`
     position: fixed;
@@ -39,6 +39,7 @@ const Div3 = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
+    gap: 4px;
 `
 
 const Line = styled.div`
@@ -49,7 +50,8 @@ const Line = styled.div`
     margin-left: 256px;
 `;
 
-const NavbarS = () => {
+const NavbarS = ({Text}) => {
+
   return (
     <Div1>
         <Line/>
@@ -58,7 +60,9 @@ const NavbarS = () => {
             <Img src='/img/Logo.png'></Img>
         </Div2>
         <Div3>
-            <ButtonNS></ButtonNS>
+        {Text.map((item, index) => (
+            <ButtonNS key={index} href={item.Link} Text={item.Text} srcNS={item.srcNS}></ButtonNS>
+        ))}
         </Div3>
     </Div1>
   )

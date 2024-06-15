@@ -12,7 +12,6 @@ const Button = styled.button`
 `
 
 const P = styled.p`
-    margin: 0px;
     font-size: 16px;
     font-family: Inter, sans-serif;
     font-weight: 500;
@@ -22,9 +21,9 @@ const Img = styled.img`
     margin-left: 16px;
 `
 
-const ButtonNS = () => {
+const ButtonNS = ({Text, srcNS}) => {
   return (
-    <Button><Img src='/img/HomeNS.png'/><P>Home</P></Button>
+    <Button><Img src={srcNS}/><P>{Text}</P></Button>
   )
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import NavbarP from '../components/NavbarP'
-import Footer from '../components/Footer'
+import Footer from '../components/parts/Footer.jsx'
+import NavbarP from '../components/parts/NavbarP.jsx'
 import styled from 'styled-components'
 
 const Div1 = styled.div`

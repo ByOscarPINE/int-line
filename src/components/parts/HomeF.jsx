@@ -11,6 +11,11 @@ const Div1 = styled.div`
     flex-direction: column;
     border-radius: 12px;
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
+    transition: ease-out 0.5s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 `
 
 const Div2 = styled.div`

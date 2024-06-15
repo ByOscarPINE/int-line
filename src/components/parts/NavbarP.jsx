@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import ButtonB from './buttons/ButtonB.jsx'
+import ButtonB from '../buttons/ButtonB.jsx'
 import { useLocation } from 'react-router-dom'
-import ButtonLD from './buttons/ButtonLD.jsx'
+import ButtonLD from '../buttons/ButtonLD.jsx'
 
 const Div1 = styled.div`
   position: fixed;

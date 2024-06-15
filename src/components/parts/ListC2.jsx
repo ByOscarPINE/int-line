@@ -67,14 +67,14 @@ const StyledLink = styled(Link)`
 `;
 
 
-const ListC2 = ({IDC2, NombreC2, LinkC2}) => {
+const ListC2 = ({IDC2, IDC2P, NombreC2, NomSer, LinkC2, DatosC2, Fecha}) => {
   return (
     <Div1>
-        <P1>{IDC2}</P1>
-        <StyledLink to={LinkC2}><H1>{NombreC2}</H1></StyledLink>
-        <H2>Datos</H2>
-        <H3>Fecha</H3>
-        <Div2><Button><Img src='/img/MoreImg.png'></Img></Button></Div2>
+        <P1>{IDC2}{IDC2P}</P1>
+        <StyledLink to={LinkC2}><H1>{NombreC2}{NomSer}</H1></StyledLink>
+        <H2>{DatosC2}</H2>
+        <H3>{Fecha}</H3>
+        <Div2><Button><Img src='/img/more-horizontal.svg'></Img></Button></Div2>
     </Div1>
   )
 }

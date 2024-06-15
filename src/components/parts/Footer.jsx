@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import ButtonFo from './buttons/ButtonFo'
+import ButtonFo from '../buttons/ButtonFo'
 
 const Div1 = styled.div`
     width: 100%;

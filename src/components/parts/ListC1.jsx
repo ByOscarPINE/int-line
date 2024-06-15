@@ -51,13 +51,15 @@ const Div2 = styled.div`
     margin-left: auto;
 `
 
-const ListC1 = () => {
+const ListC1 = ({ListC1,InfSeC1}) => {
+
+    
     
   return (
     <Div1>
         <P1>ID</P1>
-        <H1>Nombre</H1>
-        <H2>Datos</H2>
+        <H1>{InfSeC1}</H1>
+        <H2>{ListC1}</H2>
         <H3>Fecha</H3>
         <Div2></Div2>
     </Div1>
