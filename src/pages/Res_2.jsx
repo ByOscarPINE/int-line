@@ -18,26 +18,25 @@ const Box = styled.div`
     margin: auto 25px;
 `
 
-const Res_1 = () => {
+const Res_2 = () => {
 
-    const DatosNS = [
-        { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg'},
-        { toNS: '/ListP', TextNS: 'Buscar', srcNS: '/img/search.svg'},
-        { toNS: '/Res_1', TextNS: 'Diagnostico', srcNS: '/img/create.svg', backgroundColor: '#F2F2F2'},
+    const BottInf = [
+        { Link: '/Res_1', Text: 'Home', srcNS: '/img/home.svg'},
+        { Link: '/ListP', Text: 'Buscar', srcNS: '/img/search.svg'},
+        { Link: '/ListP', Text: 'Diagnosticar', srcNS: '/img/create.svg'},
     ]
 
   return (
     <>
-        <NavbarS NS={DatosNS}/>
-        <TopbarR TopRL={"/ListP"}/>
-        <Div1>
-          <Box>
-            <AsideI />
-            <AsideO />
-          </Box>
-        </Div1>
+    <NavbarS Text={BottInf}/>
+    <TopbarR />
+    <Div1>
+      <Box>
+        <AsideO />
+      </Box>
+    </Div1>
     </>
   )
 }
 
-export default Res_1
+export default Res_2

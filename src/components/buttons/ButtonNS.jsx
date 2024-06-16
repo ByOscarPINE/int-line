@@ -1,5 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
 
 const Button = styled.button`
     height: 40px;
@@ -9,6 +14,17 @@ const Button = styled.button`
     gap: 16px;
     border-radius: 8px;
     border: none;
+    transition: ease-out 0.5s;
+    background-color: transparent;
+    &:hover {
+      box-shadow: inset 250px 0 0 0 gray;
+      transform: scale(1.03);
+    }
+
+    &:active {
+        transform: scale(0.9);
+      }
+
 `
 
 const P = styled.p`
@@ -21,9 +37,14 @@ const Img = styled.img`
     margin-left: 16px;
 `
 
-const ButtonNS = ({Text, srcNS}) => {
+const ButtonNS = ({TextNS, srcNS, toNS ,backgroundColor}) => {
   return (
-    <Button><Img src={srcNS}/><P>{Text}</P></Button>
+    <StyledLink to={toNS}>
+      <Button style={{ backgroundColor: backgroundColor }}>
+        <Img src={srcNS}/>
+        <P>{TextNS}</P>
+      </Button>
+    </StyledLink>
   )
 }
 

@@ -50,7 +50,7 @@ const Line = styled.div`
     margin-left: 256px;
 `;
 
-const NavbarS = ({Text}) => {
+const NavbarS = ({NS}) => {
 
   return (
     <Div1>
@@ -60,8 +60,14 @@ const NavbarS = ({Text}) => {
             <Img src='/img/Logo.png'></Img>
         </Div2>
         <Div3>
-        {Text.map((item, index) => (
-            <ButtonNS key={index} href={item.Link} Text={item.Text} srcNS={item.srcNS}></ButtonNS>
+        {NS.map((item, index) => (
+            <ButtonNS 
+            key={index} 
+            toNS={item.toNS} 
+            TextNS={item.TextNS} 
+            srcNS={item.srcNS}
+            backgroundColor={item.backgroundColor}
+            />
         ))}
         </Div3>
     </Div1>

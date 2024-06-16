@@ -29,9 +29,9 @@ const P = styled.p`
     font-weight: 500;
 `
        
-const ButtonLD = ({textLD, LDref}) => {
+const ButtonLD = ({textLD, LDref, onClick}) => {
   return (
-    <Link to={LDref}><Button ><P>{textLD}</P></Button></Link>
+    <Link to={LDref}><Button onClick={onClick}><P>{textLD}</P></Button></Link>
   )
 }
 

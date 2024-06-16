@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ButtonLD from '../buttons/ButtonLD.jsx'
+import { Link } from 'react-router-dom'
 
 const Div1 = styled.div`
     height: 134px;
@@ -29,11 +30,13 @@ const Img = styled.img`
     width: 40px;
 `
 
-const TopbarR = () => {
+const TopbarR = ({TopRL}) => {
   return (
     <Div1>
         <Div2>
-            <Img src='/img/Back.svg'/>
+            <Link to={TopRL}>
+                <Img src='/img/Back.svg'/>
+            </Link>
             <H1>Buscador</H1>
             <ButtonLD textLD={"Cerrar Sesion"} LDref={"/"}></ButtonLD>
         </Div2>

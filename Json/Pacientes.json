@@ -1,0 +1,4 @@
+[
+    { "IDC2": "Test1", "NombreC2": "Oscar", "LinkC2": "/ListP", "DatosC2": "Datos1"},
+    { "IDC2": "Test2", "NombreC2": "Carlos", "otraProp2": "valor6" }
+]

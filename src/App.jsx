@@ -7,17 +7,12 @@ import Login from './pages/Login.jsx'
 import ListH from './pages/ListH.jsx'
 import ListP from './pages/ListP.jsx'
 import Res_1 from './pages/Res_1.jsx'
+import Res_2 from './pages/Res_2.jsx'
+import Diagnostic from './pages/Diagnostic.jsx'
+import CreateP from './pages/CreateP.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
-
-  const increment = () => {
-    setCount(count + 1)
-  }
-
-  const decrement = () => {
-    setCount(count - 1)
-  }
 
   return (
     <>
@@ -29,6 +24,9 @@ function App() {
         <Route path='/ListH' element={<ListH/>} />
         <Route path='/ListP' element={<ListP/>} />
         <Route path='/Res_1' element={<Res_1/>} />
+        <Route path='/Res_2' element={<Res_2/>} />
+        <Route path='/Diagnostic' element={<Diagnostic/>} />
+        <Route path='/CreateP' element={<CreateP/>} />
       </Routes>
     </BrowserRouter>
     </>

@@ -28,15 +28,15 @@ const ListP = () => {
     { IDC2P: '1', NomSer: 'toz', LinkC2: '/Res_1', DatosC2: 'Datos1', Fecha: '12/12/2021' },
   ];
 
-  const BottInf = [
-    { Link: '/Res_1', Text: 'Home', srcNS: '/img/home.svg'},
-    { Link: '/ListP', Text: 'Buscar', srcNS: '/img/search.svg'},
-    { Link: '/ListP', Text: 'Diagnosticar', srcNS: '/img/create.svg'},
+  const DatosNS = [
+    { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg'},
+    { toNS: '/ListP', TextNS: 'Buscar', srcNS: '/img/search.svg', backgroundColor: '#F2F2F2'},
+    { toNS: '/Diagnostic', TextNS: 'Diagnosticar', srcNS: '/img/create.svg'},
 ]
 
   return (
     <>
-      <NavbarS Text={BottInf} srcNS={BottInf}/>
+      <NavbarS NS={DatosNS}/>
       <TopbarS/>
       <Div1>
         <ListC1 InfSeC1={"Diagnostico"}></ListC1>
