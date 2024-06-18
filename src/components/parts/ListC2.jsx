@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import ButtonB from '../buttons/ButtonB'
 
 const Div1 = styled.div`
     height: 56px;
@@ -44,6 +45,16 @@ const P1 = styled.p`
     text-align: left;
 `
 
+
+const P2 = styled.p`
+    width: 70px;
+    color: #828282;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    text-align: left;
+`
+
 const Div2 = styled.div`
     width: 277px;
     display: flex;
@@ -67,16 +78,17 @@ const StyledLink = styled(Link)`
 `;
 
 
-const ListC2 = ({IDC2, IDC2P, NombreC2, NomSer, LinkC2, DatosC2, Fecha}) => {
+const ListC2 = ({IDC2, IDC2P, NombreC2, NomSer, LinkC2, DatosC2, Fecha, LinkC22}) => {
   return (
     <Div1>
         <P1>{IDC2}{IDC2P}</P1>
         <StyledLink to={LinkC2}><H1>{NombreC2}{NomSer}</H1></StyledLink>
-        <H2>{DatosC2}</H2>
+        <StyledLink to={LinkC22}><P2>{DatosC2}</P2></StyledLink>
         <H3>{Fecha}</H3>
         <Div2><Button><Img src='/img/more-horizontal.svg'></Img></Button></Div2>
     </Div1>
   )
 }
+
 
 export default ListC2

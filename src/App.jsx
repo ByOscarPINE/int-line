@@ -22,11 +22,16 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/login" element={<Login/>} />
         <Route path='/ListH' element={<ListH/>} />
-        <Route path='/ListP' element={<ListP/>} />
-        <Route path='/Res_1' element={<Res_1/>} />
-        <Route path='/Res_2' element={<Res_2/>} />
-        <Route path='/Diagnostic' element={<Diagnostic/>} />
+        {/* <Route path='/ListP' element={<ListP/>} /> */}
+        {/* <Route path='/Res_1' element={<Res_1/>} />
+        <Route path='/Res_2' element={<Res_2/>} /> */}
+        {/* <Route path='/Diagnostic' element={<Diagnostic/>} /> */}
         <Route path='/CreateP' element={<CreateP/>} />
+        <Route path='/ListP/:id' element={<ListP/>} />
+        <Route path='/ListP/:id/:id2' element={<Res_1/>} />
+        <Route path='/ListP/:id/Res_1' element={<Res_1/>} />
+        <Route path='/ListP/:id/Res_2' element={<Res_2/>} />
+        <Route path='/ListP/:id/Diagnostic' element={<Diagnostic/>} />
       </Routes>
     </BrowserRouter>
     </>

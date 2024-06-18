@@ -3,26 +3,15 @@ import NavbarS from '../components/parts/NavbarS'
 import TopbarR from '../components/parts/TopbarR'
 import styled from 'styled-components'
 import Inp2 from '../components/parts/Inp2'
-
-const Div1 = styled.div`
-    width: calc(100vw - 256px);
-    margin-left: auto;
-    display: flex;
-    flex-direction: column;
-`
-
-const Div2 = styled.div`
-    margin-top: 15px;
-    text-align: left;
-    margin-left: 30px;
-`
+import { useParams } from 'react-router-dom'
 
 const Diagnostic = () => {
+    const {id} = useParams();
 
     const DatosNS = [
         { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg'},
-        { toNS: '/ListP', TextNS: 'Buscar', srcNS: '/img/search.svg'},
-        { toNS: '/Diagnostic', TextNS: 'Diagnosticar', srcNS: '/img/create.svg', backgroundColor: '#F2F2F2'},
+        { toNS: `/ListP/${id}`, TextNS: 'Buscar', srcNS: '/img/search.svg'},
+        { toNS: `/ListP/${id}/Diagnostic`, TextNS: 'Diagnosticar', srcNS: '/img/create.svg', backgroundColor: '#F2F2F2'},
     ]
 
     const Inputs = [
@@ -34,7 +23,7 @@ const Diagnostic = () => {
   return (
     <>
         <NavbarS NS={DatosNS}/>
-        <TopbarR TopRL={"/ListP"}/>
+        <TopbarR />
         <Div1>
             {/* Map of items */}
             {Inputs.map((Input, index) => (
@@ -52,3 +41,16 @@ const Diagnostic = () => {
 }
 
 export default Diagnostic
+
+const Div1 = styled.div`
+    width: calc(100vw - 256px);
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+`
+
+const Div2 = styled.div`
+    margin-top: 15px;
+    text-align: left;
+    margin-left: 30px;
+`

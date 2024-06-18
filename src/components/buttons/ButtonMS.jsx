@@ -29,9 +29,9 @@ const Img = styled.img`
     margin-left: 16px;
 `
 
-const ButtonMS = ({srcNS}) => {
+const ButtonMS = ({srcNS, onClick}) => {
   return (
-    <Button>
+    <Button onClick={onClick}>
         <Img src={srcNS}/>
     </Button>
   )

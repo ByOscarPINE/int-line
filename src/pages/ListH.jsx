@@ -23,24 +23,31 @@ const Line = styled.div`
 
 const ListH = () => {
 
-
-
   const DatosNS = [
-    { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg', backgroundColor: '#F2F2F2' },
+    { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg', backgroundColor: '#F2F2F2'},
     { toNS: '/CreateP', TextNS: 'Crear', srcNS: '/img/create.svg'},
 ]
+
 
   return (
     <>
       <NavbarS NS={DatosNS}/>
-      <TopbarS />
+      <TopbarS  Datos={Pacientes} Search={"NombreC2"}/>
       <Div1>
         <ListC1 ListC1={"Datos"} InfSeC1={"Nombre"}></ListC1>
         {/* Mapea unicamente los componentes line y ListC2 */}
         {Pacientes.map((paciente, index) => (
           <React.Fragment key={index}>
             <Line />
-            <ListC2 paciente={paciente} IDC2={paciente.IDC2} NombreC2={paciente.NombreC2} LinkC2={paciente.LinkC2} DatosC2={paciente.DatosC2}/>
+            <ListC2 
+              paciente={paciente}
+
+              IDC2={paciente.IDC2} 
+              NombreC2={paciente.NombreC2} 
+              DatosC2={paciente.DatosC2}
+              LinkC2={{pathname: `/ListP/${paciente.IDC2}`}}
+              LinkC22={{pathname: `/ListP/${paciente.IDC2}/Res_2`}}
+            />
           </React.Fragment>
         ))}
       </Div1>

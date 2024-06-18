@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import ButtonLD from '../buttons/ButtonLD.jsx'
 import { Link } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Div1 = styled.div`
     height: 134px;
@@ -30,11 +32,26 @@ const Img = styled.img`
     width: 40px;
 `
 
-const TopbarR = ({TopRL}) => {
+const TopbarR = ({condition}) => {
+  const {id} = useParams();
+
+
+    const navigate = useNavigate();
+    const location = useLocation();
+  
+    const handleGoBack = (event) => {
+      event.preventDefault();
+      if (location.state?.from) {
+        navigate(location.state.from);
+      } else {
+        navigate(-1);
+      }
+    };
+
   return (
     <Div1>
         <Div2>
-            <Link to={TopRL}>
+            <Link to={condition ? `/ListP/${id}` : "#"} onClick={condition ? undefined : handleGoBack}>
                 <Img src='/img/Back.svg'/>
             </Link>
             <H1>Buscador</H1>

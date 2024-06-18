@@ -37,10 +37,10 @@ const Img = styled.img`
     margin-left: 16px;
 `
 
-const ButtonNS = ({TextNS, srcNS, toNS ,backgroundColor}) => {
+const ButtonNS = ({TextNS, srcNS, toNS ,backgroundColor, onClick}) => {
   return (
     <StyledLink to={toNS}>
-      <Button style={{ backgroundColor: backgroundColor }}>
+      <Button onClick={onClick} style={{ backgroundColor: backgroundColor }}>
         <Img src={srcNS}/>
         <P>{TextNS}</P>
       </Button>

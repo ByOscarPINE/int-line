@@ -72,7 +72,7 @@ const Login = () => {
     <NavbarP/>
     <Div1>
         <AsideL>
-          <H1>Login</H1>
+          <H1>Iniciar sesión</H1>
           <Div2>
             <P>Correo electrónico</P>
             <Input type="text" id="email" name="email" placeholder='email@janesfakedomain.net'></Input>

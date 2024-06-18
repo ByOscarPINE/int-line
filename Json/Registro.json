@@ -1,0 +1,4 @@
+[
+    { "IDC2P": "Test1", "NomSer": "Tos", "LinkC2": "/ListP", "DatosC2": "Datos1"},
+    { "IDC2P": "Test2", "NomSer": "Gripe", "otraProp2": "valor6" }
+]

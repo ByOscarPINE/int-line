@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import ButtonLD from '../buttons/ButtonLD'
 import { useState } from 'react'
-import ButtonNS from '../buttons/ButtonNS'
 import ButtonMS from '../buttons/ButtonMS'
+import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 const Div1 = styled.div`
     width: 661px;
@@ -35,11 +36,21 @@ const Div3 = styled.div`
 `
 
 const Inp2 = ({showButton, TextIn2, x}) => {
-    const [inputs, setInputs] = useState([<P>{"Sintomas"}</P>,
+    const {id} = useParams();
+    const navigate = useNavigate();
+
+    const [inputs, setInputs] = useState([
+    <P>{"Sintomas"}</P>,
+    <Input key={0}/>
     ]);
 
     const addInput = () => {
         setInputs([...inputs, <Input key={inputs.length}/>]);
+        console.log("Hola")
+    };
+    
+    const NavigateTo = () => {
+        navigate(`/ListP/${id}/Res_1`);
     };
 
   return (
@@ -55,7 +66,7 @@ const Inp2 = ({showButton, TextIn2, x}) => {
         }
         {showButton && 
             <Div2>
-                <ButtonLD textLD={"Diagnosticar"}/>
+                <ButtonLD textLD={"Diagnosticar"} LDref={{pathname: `/ListP/${id}/Res_1` }}/>
             </Div2>
         }
     

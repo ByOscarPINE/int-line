@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ButtonNS from '../buttons/ButtonNS'
+import { useParams } from 'react-router-dom'
 
 const Div1 = styled.div`
     position: fixed;
@@ -52,6 +53,13 @@ const Line = styled.div`
 
 const NavbarS = ({NS}) => {
 
+    const {id} = useParams();
+
+    const data = id;
+
+    console.log(data)
+
+    
   return (
     <Div1>
         <Line/>

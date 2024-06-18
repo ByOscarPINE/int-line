@@ -3,8 +3,7 @@ import TopbarR from '../components/parts/TopbarR'
 import NavbarS from '../components/parts/NavbarS'
 import AsideO from '../components/parts/AsideO'
 import styled from 'styled-components'
-import AsideI from '../components/parts/AsideI'
-
+import { useParams } from 'react-router-dom'
 
 const Div1 = styled.div`
     width: calc(100vw - 256px);
@@ -19,17 +18,19 @@ const Box = styled.div`
 `
 
 const Res_2 = () => {
+  const {id} = useParams();
 
-    const BottInf = [
-        { Link: '/Res_1', Text: 'Home', srcNS: '/img/home.svg'},
-        { Link: '/ListP', Text: 'Buscar', srcNS: '/img/search.svg'},
-        { Link: '/ListP', Text: 'Diagnosticar', srcNS: '/img/create.svg'},
+    const DatosNS = [
+        { toNS: '/Res_1', TextNS: 'Home', srcNS: '/img/home.svg'},
+        { toNS: '/ListP', TextNS: 'Buscar', srcNS: '/img/search.svg'},
+        { toNS: '/ListP', TextNS: 'Diagnosticar', srcNS: '/img/create.svg'},
+        { toNS: '/ListP', TextNS: 'Datos', srcNS: '/img/create.svg', backgroundColor: '#F2F2F2'},
     ]
 
   return (
     <>
-    <NavbarS Text={BottInf}/>
-    <TopbarR />
+    <NavbarS NS={DatosNS}/>
+    <TopbarR/>
     <Div1>
       <Box>
         <AsideO />

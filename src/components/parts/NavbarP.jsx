@@ -51,9 +51,9 @@ const NavbarP = () => {
         <Img src='./img/Logo.png' alt='img'/>
       </Div3>
       <Div4>
-          <ButtonB textB={"Home"} Bref={"/"} currentPath={location.pathname} />
-          <ButtonB textB={"About"} Bref={"/about"}/>
-          <ButtonLD textLD={"Login"} LDref={"/login"}/>
+          <ButtonB textB={"Menu Principal"} Bref={"/"} currentPath={location.pathname} />
+          <ButtonB textB={"Sobre Nosotros"} Bref={"/about"}/>
+          <ButtonLD textLD={"Iniciar sesión"} LDref={"/login"}/>
       </Div4>
     </Div1>
   )

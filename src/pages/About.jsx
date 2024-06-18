@@ -56,7 +56,7 @@ const About = () => {
     <NavbarP/>
     <Div1>
         <AsideL>
-          <H1>About Us</H1>
+          <H1>Sobre Nosotros</H1>
           <P>¡Bienvenido a LIFELINE!
             Somos tu aliado en la búsqueda de respuestas sobre tu salud. 
             Nuestra plataforma te ofrece un diagnóstico rápido y preciso 
