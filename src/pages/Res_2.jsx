@@ -21,10 +21,10 @@ const Res_2 = () => {
   const {id} = useParams();
 
     const DatosNS = [
-        { toNS: '/Res_1', TextNS: 'Home', srcNS: '/img/home.svg'},
-        { toNS: '/ListP', TextNS: 'Buscar', srcNS: '/img/search.svg'},
-        { toNS: '/ListP', TextNS: 'Diagnosticar', srcNS: '/img/create.svg'},
-        { toNS: '/ListP', TextNS: 'Datos', srcNS: '/img/create.svg', backgroundColor: '#F2F2F2'},
+        { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg'},
+        // { toNS: '/ListP', TextNS: 'Buscar', srcNS: '/img/search.svg'},
+        // { toNS: `/ListP/${id}/Diagnostic`, TextNS: 'Diagnosticar', srcNS: '/img/create.svg'},
+        { toNS: `/ListH/${id}/Res_2`, TextNS: 'Datos', srcNS: '/img/create.svg', backgroundColor: '#F2F2F2'},
     ]
 
   return (

@@ -4,6 +4,46 @@ import ButtonLD from '../buttons/ButtonLD.jsx'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+const TopbarS = ({Datos, Search}) => {
+    
+const [consulta, setConsulta] = useState('');
+
+const handleChange = event => {
+    setConsulta(event.target.value);
+    console.log(consulta)
+};
+
+const resultadosDeBusqueda = consulta
+  ? Datos.filter(paciente =>
+      paciente[Search].toLowerCase().includes(consulta.toLowerCase())
+    )
+  : [];
+
+
+  return (
+    <Div1>
+        <Div2>
+            <H1>Buscador</H1>
+            <Div3>
+                <Input value={consulta} onChange={handleChange}></Input>
+                <ul>
+                {resultadosDeBusqueda.map(paciente => (
+                    <li key={paciente.id}>
+            <Link to={{ pathname: `/${paciente.id}`, state: { category: paciente.category} }}>{paciente[Search]}<p>{paciente.description}</p></Link>
+            
+                </li>
+                ))}
+                </ul>
+                <ButtonF><Img src='/img/FiltroImg.png'/><P>Filtro</P></ButtonF>
+            </Div3>
+        </Div2>
+        <Div4>
+            <ButtonLD textLD={"Cerrar Sesion"} LDref={"/"}></ButtonLD>
+        </Div4>
+    </Div1>
+  )
+}
+
 const Div1 = styled.div`
     height: 134px;
     width: calc(100vw - 256px);
@@ -68,45 +108,5 @@ const P = styled.p`
     font-weight: 400;
     color: #828282;
 `
-
-
-const TopbarS = ({Datos, Search}) => {
-const [consulta, setConsulta] = useState('');
-
-const handleChange = event => {
-    setConsulta(event.target.value);
-    console.log(consulta)
-};
-
-const resultadosDeBusqueda = consulta
-? Datos.filter(paciente =>  
-  paciente[Search].toLowerCase().includes(consulta.toLowerCase())
-  )
-: [];
-
-
-  return (
-    <Div1>
-        <Div2>
-            <H1>Buscador</H1>
-            <Div3>
-                <Input value={consulta} onChange={handleChange}></Input>
-                <ul>
-                {resultadosDeBusqueda.map(paciente => (
-                    <li key={paciente.id}>
-            <Link to={{ pathname: `/${paciente.id}`, state: { category: paciente.category} }}>{paciente[Search]}<p>{paciente.description}</p></Link>
-            
-                </li>
-                ))}
-                </ul>
-                <ButtonF><Img src='/img/FiltroImg.png'/><P>Filtro</P></ButtonF>
-            </Div3>
-        </Div2>
-        <Div4>
-            <ButtonLD textLD={"Cerrar Sesion"} LDref={"/"}></ButtonLD>
-        </Div4>
-    </Div1>
-  )
-}
 
 export default TopbarS

@@ -1,7 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import ButtonB from '../buttons/ButtonB'
+
+import { useTasks } from '../../context/TaskContext'
+
+const ListC2 = ({data, paciente, IDC2, IDC2P, NombreC2, NomSer, LinkC2, DatosC2, Fecha, LinkC22}) => {
+
+    const {deleteTask} = useTasks();
+
+  return (
+    <Div1>
+        <P1>{data.id}{data.idd}</P1>
+        <StyledLink to={LinkC2}><H1>{data.nombres}{data.diagnostico}</H1></StyledLink>
+        <StyledLink to={LinkC22}><P2>{DatosC2}</P2></StyledLink>
+        <H3>{data.createAt}</H3>
+        <Div2><Button onClick={() => deleteTask(data.id)}><Img src='/img/more-horizontal.svg'></Img></Button></Div2>
+    </Div1>  
+  )
+}
 
 const Div1 = styled.div`
     height: 56px;
@@ -76,19 +92,5 @@ const Img = styled.img`
 const StyledLink = styled(Link)`
     text-decoration: none;
 `;
-
-
-const ListC2 = ({IDC2, IDC2P, NombreC2, NomSer, LinkC2, DatosC2, Fecha, LinkC22}) => {
-  return (
-    <Div1>
-        <P1>{IDC2}{IDC2P}</P1>
-        <StyledLink to={LinkC2}><H1>{NombreC2}{NomSer}</H1></StyledLink>
-        <StyledLink to={LinkC22}><P2>{DatosC2}</P2></StyledLink>
-        <H3>{Fecha}</H3>
-        <Div2><Button><Img src='/img/more-horizontal.svg'></Img></Button></Div2>
-    </Div1>
-  )
-}
-
 
 export default ListC2

@@ -4,7 +4,43 @@ import TopbarS from '../components/parts/TopbarS'
 import styled from 'styled-components'
 import ListC1 from '../components/parts/ListC1'
 import ListC2 from '../components/parts/ListC2'
-import Pacientes from '/Json/Pacientes.json';
+import { useEffect } from 'react';
+import { useTasks } from '../context/TaskContext'
+
+const ListH = () => {
+
+  const {Pacientes, loadTasks} = useTasks();
+
+  useEffect (() => {
+    try {
+      loadTasks();
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  return (
+    <>
+      <NavbarS NS={DatosNS}/>
+      <TopbarS  Datos={Pacientes} Search={"nombres"}/>
+      <Div1>
+        <ListC1 ListC1={"Datos"} InfSeC1={"Nombre"}></ListC1>
+        {/* Mapea unicamente los componentes line y ListC2 */}
+        {Pacientes.map((paciente, index) => (
+          <React.Fragment key={index}>
+            <Line />
+            <ListC2 
+              data={paciente}
+              
+              LinkC2={{pathname: `/ListP/${paciente.id}`}}
+              LinkC22={{pathname: `/ListH/${paciente.IDC2}/Res_2`}}
+            />
+          </React.Fragment>
+        ))}
+      </Div1>
+    </>
+  )
+}
 
 const Div1 = styled.div`
     width: calc(100vw - 256px);
@@ -21,38 +57,9 @@ const Line = styled.div`
     height: 2px;
 `;
 
-const ListH = () => {
-
-  const DatosNS = [
-    { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg', backgroundColor: '#F2F2F2'},
-    { toNS: '/CreateP', TextNS: 'Crear', srcNS: '/img/create.svg'},
+const DatosNS = [
+  { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg', backgroundColor: '#F2F2F2'},
+  { toNS: '/CreateP', TextNS: 'Crear', srcNS: '/img/create.svg'},
 ]
-
-
-  return (
-    <>
-      <NavbarS NS={DatosNS}/>
-      <TopbarS  Datos={Pacientes} Search={"NombreC2"}/>
-      <Div1>
-        <ListC1 ListC1={"Datos"} InfSeC1={"Nombre"}></ListC1>
-        {/* Mapea unicamente los componentes line y ListC2 */}
-        {Pacientes.map((paciente, index) => (
-          <React.Fragment key={index}>
-            <Line />
-            <ListC2 
-              paciente={paciente}
-
-              IDC2={paciente.IDC2} 
-              NombreC2={paciente.NombreC2} 
-              DatosC2={paciente.DatosC2}
-              LinkC2={{pathname: `/ListP/${paciente.IDC2}`}}
-              LinkC22={{pathname: `/ListP/${paciente.IDC2}/Res_2`}}
-            />
-          </React.Fragment>
-        ))}
-      </Div1>
-    </>
-  )
-}
 
 export default ListH

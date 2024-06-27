@@ -57,8 +57,6 @@ const NavbarS = ({NS}) => {
 
     const data = id;
 
-    console.log(data)
-
     
   return (
     <Div1>

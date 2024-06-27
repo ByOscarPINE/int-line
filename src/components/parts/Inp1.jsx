@@ -1,6 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import ButtonLD from '../buttons/ButtonLD'
+
+const Inp1 = ({value, onChange, TextIn1 }) => {
+
+  return (
+    <Div1>
+        <P>{TextIn1}</P>
+        <Input value={value} onChange={onChange}></Input>
+    </Div1>
+  )
+}
 
 const Div1 = styled.div`
     width: 661px;
@@ -22,21 +31,5 @@ const P = styled.p`
     font-family: Inter, sans-serif;
     font-weight: 500;
 `
-
-const Inp1 = ({value, onChange, TextIn1 }) => {
-
-
-    const handleButtonClick = () => {
-        console.log("inputs");
-      };
-    
-  return (
-    <Div1>
-        <P>{TextIn1}</P>
-        <Input value={value} onChange={onChange}></Input>
-                {/* This function exclude the button if the showButton prop is false */}
-    </Div1>
-  )
-}
 
 export default Inp1
