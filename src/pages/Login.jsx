@@ -3,7 +3,7 @@ import Footer from "../components/parts/Footer.jsx";
 import NavbarP from "../components/parts/NavbarP.jsx";
 import styled from "styled-components";
 import { Formik, Form } from "formik";
-
+import { jwtDecode } from "jwt-decode";
 import { useTasks } from "../context/TaskContext.jsx";
 
 const Login = () => {
@@ -42,7 +42,8 @@ const Login = () => {
                   actions.resetForm();
                   if (response && response.token) {
                     console.log("Inicio de sesión exitoso, token guardado.");
-                    console.log(response.token)
+                    const decodedToken = jwtDecode(response.token);
+                    console.log( decodedToken)
                     // Aquí puedes redirigir al usuario a la página principal o donde corresponda
                   } else {
                     console.log("No hay token, posible error en el inicio de sesión.");
