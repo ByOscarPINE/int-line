@@ -5,6 +5,8 @@ import { useLocation } from 'react-router-dom'
 import ButtonLD from '../buttons/ButtonLD.jsx'
 
 const Div1 = styled.div`
+
+  @media (min-width: 767px) {
   position: fixed;
   width: 100%;
   height: 164px;
@@ -12,16 +14,29 @@ const Div1 = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: white;
+  }
 `
 const Div2 = styled.div`
   width: 40%;
   text-align: left;
+
+  @media (max-width: 768px) {
+   display: none;
+  }
 `
 const Div3 = styled.div`
   width: 20%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 const Img = styled.img`
   height: 154px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const Div4 = styled.div`
@@ -29,6 +44,21 @@ const Div4 = styled.div`
   justify-content: center;
   display: flex;
   gap: 48px;
+
+  &:hover > * {
+    filter: blur(4px);
+    transition: filter 0.3s ease;
+  }
+    
+  &:hover > *:hover {
+    filter: blur(0);
+    transition: filter 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  
+  }
 `
 
 const H1 = styled.h1`
@@ -36,6 +66,18 @@ const H1 = styled.h1`
   margin-left: 80px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
+
+const Img1 = styled.img`
+  width: 150px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `
 
 
@@ -44,6 +86,7 @@ const NavbarP = () => {
 
   return (
     <Div1>
+      <Img1 src='./img/Logo-I.svg'></Img1>
       <Div2>
         <H1>LIFELINE</H1>
       </Div2>

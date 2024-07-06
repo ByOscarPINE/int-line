@@ -6,6 +6,7 @@ import HomeP from '../components/parts/HomeP.jsx'
 import HomeS from '../components/parts/HomeS.jsx'
 import HomeD from '../components/parts/HomeD.jsx'
 import HomeF from '../components/parts/HomeF.jsx'
+import NavbarPM from '../components/parts/NavbarPM.jsx'
 
 const Div1 = styled.div`
     margin-top: 164px;
@@ -14,6 +15,10 @@ const Div1 = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: 767px) {
+    margin-top: 0px;
+    }
 `
 
 const Div2 = styled.div`
@@ -21,11 +26,19 @@ const Div2 = styled.div`
     height: auto;
     width: 857px;
     padding: 10px;
+
+    @media (max-width: 767px) {
+    margin-top: 0px;
+    }
 `
 const Div3 = styled.div`
     margin-top: 110px;
     width: auto;
     height: 576px;
+
+    @media (max-width: 767px) {
+    margin-bottom: 50px;
+    }
 `
 
 const Div4 = styled.div`
@@ -35,6 +48,9 @@ const Div4 = styled.div`
     height: 88px;
     margin-left: 80px;
     border-radius: 10px;
+    @media (max-width: 767px) {
+    display: none;
+    }
 `
 
 const Div5 = styled.div`
@@ -45,6 +61,10 @@ const Div5 = styled.div`
     display: flex;
     justify-content: center;
     gap: 32px;
+
+    @media (max-width: 767px) {
+    display: none;
+    }
 `
 
 
@@ -53,6 +73,7 @@ const Home = () => {
   return (
     <>
     <NavbarP/>
+    <NavbarPM DatosPM={DatosPM}/>
     <Div1>
         <Div2>
             <HomeP/>
@@ -78,3 +99,9 @@ const Home = () => {
 }
 
 export default Home
+
+const DatosPM = [
+    { toPM: '/', srcPM: '/img/homepm.svg'},
+    { toPM: '/about', srcPM: '/img/create.svg'},
+    { toPM: '/login', srcPM: '/img/profile.svg'},
+  ]

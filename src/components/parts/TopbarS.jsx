@@ -3,10 +3,15 @@ import styled from 'styled-components'
 import ButtonLD from '../buttons/ButtonLD.jsx'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Cookies from 'js-cookie'
+import { jwtDecode } from "jwt-decode";
 
 const TopbarS = ({Datos, Search}) => {
     
 const [consulta, setConsulta] = useState('');
+const token = Cookies.get('token');
+
+const decodedToken = jwtDecode(token);
 
 const handleChange = event => {
     setConsulta(event.target.value);
@@ -19,7 +24,6 @@ const resultadosDeBusqueda = consulta
     )
   : [];
 
-
   return (
     <Div1>
         <Div2>
@@ -29,15 +33,15 @@ const resultadosDeBusqueda = consulta
                 <ul>
                 {resultadosDeBusqueda.map(paciente => (
                     <li key={paciente.id}>
-            <Link to={{ pathname: `/${paciente.id}`, state: { category: paciente.category} }}>{paciente[Search]}<p>{paciente.description}</p></Link>
-            
-                </li>
+                    <Link to={{ pathname: `/${paciente.id}`, state: { category: paciente.category} }}>{paciente[Search]}<p>{paciente.description}</p></Link>
+                    </li>
                 ))}
                 </ul>
                 <ButtonF><Img src='/img/FiltroImg.png'/><P>Filtro</P></ButtonF>
             </Div3>
         </Div2>
         <Div4>
+            <H1>{`¡Bienvenido ${decodedToken.email}!`}</H1>
             <ButtonLD textLD={"Cerrar Sesion"} LDref={"/"}></ButtonLD>
         </Div4>
     </Div1>
@@ -65,10 +69,12 @@ const Div3 = styled.div`
 `
 
 const Div4 = styled.div`
-    position: relative;
     margin-top: 39px;
     margin-left: auto;
     margin-right: 60px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
 `
 const H1 = styled.h1`
     font-size: 20px;

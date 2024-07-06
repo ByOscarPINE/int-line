@@ -4,10 +4,19 @@ import styled from 'styled-components'
 const Div1 = styled.div`
     display: flex;
     height: auto;
+
+    @media (max-width: 767px) {
+    flex-direction: column;
+    }
 `
 
 const Aside1 = styled.aside`
     width: 50%;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+
 `
 
 const Aside2 = styled.aside`
@@ -15,6 +24,18 @@ const Aside2 = styled.aside`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 767px) {
+        width: 100%;
+    }
+`
+
+const Aside3 = styled.aside`
+    width: 100%;
+
+    @media (min-width: 768px) {
+    display: none;
+  }
 `
 
 const H1 = styled.h1`
@@ -23,10 +44,19 @@ const H1 = styled.h1`
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     text-align: center;
+
+    @media (max-width: 767px) {
+    font-size: 30px;
+    width: 70%;
+    }
 `
 
 const Img = styled.img`
     width: 710px;
+    
+    @media (max-width: 767px) {
+    width: 400px;
+    }
 `
 
 const HomeS = () => {
@@ -40,6 +70,9 @@ const HomeS = () => {
             <H1>UN EVALUADOR MEDICO HECHO PARA PERSONAL MEDICO CON EL OBJETIVO DE 
             QUE TODOS GOZEMOS DE BUENA SALUD.</H1>
         </Aside2>
+        <Aside3>
+            <Img src='./img/HomeI.svg'></Img>
+        </Aside3>
     </Div1>
   )
 }

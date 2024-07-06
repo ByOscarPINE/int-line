@@ -1,6 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import Cookie from 'js-cookie';
+
+       
+const ButtonLD = ({textLD, LDref, onClickk, submit}) => {
+
+  const onButtonClick = () => {
+    Cookie.remove('token');
+  }
+
+  return (
+    <Link to={LDref}><Button type={submit} onClick={onButtonClick}><P>{textLD}</P></Button></Link>
+  )
+}
+
+export default ButtonLD
 
 const Button = styled.button`
     height: 52px;
@@ -28,11 +43,3 @@ const P = styled.p`
     font-family: Inter, sans-serif;
     font-weight: 500;
 `
-       
-const ButtonLD = ({textLD, LDref, onClick}) => {
-  return (
-    <Link to={LDref}><Button onClick={onClick}><P>{textLD}</P></Button></Link>
-  )
-}
-
-export default ButtonLD

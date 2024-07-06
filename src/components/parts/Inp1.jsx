@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Inp1 = ({value, onChange, TextIn1 }) => {
+const Inp1 = ({value, onChange, TextIn1, placeholder }) => {
 
   return (
     <Div1>
         <P>{TextIn1}</P>
-        <Input value={value} onChange={onChange}></Input>
+        <Input value={value} onChange={onChange} placeholder={placeholder}></Input>
     </Div1>
   )
 }

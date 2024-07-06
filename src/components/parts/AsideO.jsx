@@ -1,5 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useTasks } from '../../context/TaskContext';
+
+const AsideO = () => {
+
+    const { DatosP} = useTasks();
+  return (
+    <Div1>
+        <P>Output</P>
+        <Box>
+            <PI>Nombre(s): {DatosP.nombres}</PI>
+            <PI>Apellido Paterno: {DatosP.apellido_p}</PI>
+            <PI>Apellido Materno: {DatosP.apellido_m}</PI>
+            <PI>Estado de nacimiento: {DatosP.estado_n}</PI>
+            <PI>Municipio de residencia: {DatosP.municipio_n}</PI>
+            <PI>Localidad: {DatosP.localidad}</PI>
+            <PI>Agencia: {DatosP.agencia}</PI>
+            <PI>Barrio: {DatosP.barrio}</PI>
+        </Box>
+    </Div1>
+  )
+}
+
+export default AsideO
 
 const Div1 = styled.div`
     width: 100%;
@@ -29,16 +52,3 @@ const PI = styled.p`
     margin: 24px;
     color: #828282;
 `
-
-const AsideO = () => {
-  return (
-    <Div1>
-        <P>Output</P>
-        <Box>
-            <PI>Nombre:</PI>
-        </Box>
-    </Div1>
-  )
-}
-
-export default AsideO

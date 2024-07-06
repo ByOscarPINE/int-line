@@ -33,7 +33,7 @@ const ListH = () => {
               data={paciente}
               
               LinkC2={{pathname: `/ListP/${paciente.id}`}}
-              LinkC22={{pathname: `/ListH/${paciente.IDC2}/Res_2`}}
+              LinkC22={{pathname: `/ListH/${paciente.id}/Res_2`}}
             />
           </React.Fragment>
         ))}

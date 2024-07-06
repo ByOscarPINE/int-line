@@ -3,16 +3,28 @@ import Footer from "../components/parts/Footer.jsx";
 import NavbarP from "../components/parts/NavbarP.jsx";
 import styled from "styled-components";
 import { Formik, Form } from "formik";
-import { jwtDecode } from "jwt-decode";
 import { useTasks } from "../context/TaskContext.jsx";
+import Cookie from "js-cookie";
+import { Navigate, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import NavbarPM from "../components/parts/NavbarPM.jsx";
 
 const Login = () => {
 
   const {login} = useTasks();  
+  const navigate = useNavigate();
+  const token = Cookies.get('token');
+
+    if (token) {
+      // Si no hay token en las cookies, redirige al usuario al login
+      return <Navigate to="/ListH" />;
+    }
+
 
   return (
     <>
       <NavbarP />
+      <NavbarPM DatosPM={DatosPM}/>
       <Div1>
         <AsideL>
           <H1>Iniciar sesión</H1>
@@ -42,9 +54,11 @@ const Login = () => {
                   actions.resetForm();
                   if (response && response.token) {
                     console.log("Inicio de sesión exitoso, token guardado.");
-                    const decodedToken = jwtDecode(response.token);
-                    console.log( decodedToken)
+                    // const decodedToken = jwtDecode(response.token);
+                    // console.log( decodedToken)
+                    Cookie.set('token', response.token, { expires: 1 });// Expira en 7 días
                     // Aquí puedes redirigir al usuario a la página principal o donde corresponda
+                    navigate('/ListH');
                   } else {
                     console.log("No hay token, posible error en el inicio de sesión.");
                     // Manejar el caso de que no se reciba token
@@ -58,6 +72,7 @@ const Login = () => {
                   <Input 
                     name="email" 
                     type="email"
+                    placeholder="example@domain.com"
                     onChange={handleChange}
                     value={values.email}
                     />
@@ -65,6 +80,7 @@ const Login = () => {
                   <Input 
                     name="password" 
                     type="password"
+                    placeholder="example123"
                     onChange={handleChange}
                     value={values.password}
                     />
@@ -77,13 +93,20 @@ const Login = () => {
           </Div2>
         </AsideL>
         <AsideR>
-          <Img src="/img/LoginImg.png"></Img>
+          <Img src="/img/LoginImg.svg"></Img>
         </AsideR>
       </Div1>
       <Footer />
     </>
   );
 };
+
+const DatosPM = [
+  { toPM: '/', srcPM: '/img/homepm.svg'},
+  { toPM: '/about', srcPM: '/img/create.svg'},
+  { toPM: '/login', srcPM: '/img/profile.svg'},
+]
+
 
 const P1 = styled.p`
   margin: 0px;
@@ -117,12 +140,22 @@ const Div1 = styled.div`
   height: 100vh;
   width: 100%;
   display: flex;
+
+  @media (max-width: 767px) {
+  margin-top: 0px;
+  height: 50vh;
+  }
 `;
 
 const AsideL = styled.aside`
   width: 50%;
   margin-top: 88px;
   margin-left: 80px;
+
+  @media (max-width: 767px) {
+  width: calc(100vw - 160px);
+  margin-top: 0px;
+  }
 `;
 
 const H1 = styled.h1`
@@ -132,14 +165,22 @@ const H1 = styled.h1`
   font-size: 64px;
   font-family: "Inter", sans-serif;
   font-weight: 700;
+
+  @media (max-width: 767px) {
+    font-size: 35px;
+    width: 100%;
+  }
 `;
 
 const Div2 = styled.div`
-  margin-top: 92px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 624px;
+
+  @media (min-width: 767px) {
+    margin-top: 92px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 624px;
+  }
 `;
 
 const P = styled.p`
@@ -148,6 +189,10 @@ const P = styled.p`
   font-size: 16px;
   font-family: "Inter", sans-serif;
   font-weight: 500;
+
+  @media (max-width: 767px) {
+    width: calc(100vw - 160px);
+  }
 `;
 
 const Input = styled.input`
@@ -157,6 +202,10 @@ const Input = styled.input`
   border: 1.5px solid #e0e0e0;
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
   margin-bottom: 24px;
+  
+  @media (max-width: 767px) {
+    width: calc(100vw - 160px);
+  }
 `;
 
 const AsideR = styled.aside`
@@ -165,6 +214,10 @@ const AsideR = styled.aside`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const Img = styled.img`

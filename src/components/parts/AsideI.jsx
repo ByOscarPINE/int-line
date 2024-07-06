@@ -31,9 +31,14 @@ const PI = styled.p`
 const AsideI = () => {
   return (
     <Div1>
-        <P>Input</P>
+        <P>Paciente</P>
         <Box>
-            <PI>Diagnostico:</PI>
+            <PI>Nombre:</PI>
+            <PI>Fecha de consulta:</PI>
+            <PI>Edad:</PI>
+            <PI>Peso:</PI>
+            <PI>Estatura:</PI>
+            <PI>Sintomas:</PI>
         </Box>
     </Div1>
   )

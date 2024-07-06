@@ -33,7 +33,7 @@ const ListP = () => {
   return (
     <>
       <NavbarS NS={DatosNS}/>
-      <TopbarS Datos={Registro} Search={"NomSer"} />
+      <TopbarS Datos={Diagnostics} Search={"diagnostico"} />
       <Div1>
         <ListC1 InfSeC1={"Diagnostico"}></ListC1>
         {Diagnostics.map((diagnostic, index) => (

@@ -4,6 +4,7 @@ import { deleteTaskRequest } from "../api/login.api";
 import { createTaskRequest } from "../api/login.api";
 import { registerPac } from "../api/login.api";
 import { getDiagnostics, getDiagg } from "../api/login.api";
+import { getUser } from "../api/login.api";
 
 export const TaskContext = createContext();
 
@@ -21,7 +22,28 @@ export const TaskContextProvider = ({ children }) => {
 
   const [Diagnostics, setDiagnostics] = useState([]);
 
-  async function loadTasks() {
+  const [DatosP, setDatosP] = useState([]);
+
+  const validarLetrasYEspacios = (event) => {
+    const valorActual = event.target.value;
+    // Verificar si el valor actual contiene algo que no sea letra o espacio
+    if (/[^A-Za-zñÑáéíóúÁÉÍÓÚüÜ\s]/.test(valorActual)) {
+      // Eliminar cualquier carácter que no sea letra o espacio
+      event.target.value = valorActual.replace(/[^A-Za-zñÑáéíóúÁÉÍÓÚüÜ\s]/g, '');
+    }
+  };
+
+  const validarPeso = (event) => {
+    const valorActual = event.target.value;
+    // Verificar si el valor actual contiene algo que no sea letra o espacio
+    if (/[^0-9.\s]/.test(valorActual)) {
+      // Eliminar cualquier carácter que no sea letra o espacio
+      event.target.value = valorActual.replace(/[^0-9.\s]/g, '');
+    }
+  };
+  
+
+  const loadTasks = async () => {
     const response = await getTaskRequest();
     setPacientes(response.data);
   }
@@ -76,6 +98,7 @@ export const TaskContextProvider = ({ children }) => {
     }
   }
 
+
   const getDg = async function (datos) {
     try {
       console.log(datos)
@@ -86,8 +109,21 @@ export const TaskContextProvider = ({ children }) => {
     }
   };
 
+  const getPacienteInfo = async (id) => {
+    try {
+      const responsepac = await getUser(id);
+      setDatosP(responsepac.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
-  return <TaskContext.Provider value={{Pacientes, Diagnostics, loadTasks, deleteTask, createTask, login, registrarPacc, getDiag, getDg}}>
+
+  return <TaskContext.Provider value={{
+    Pacientes, Diagnostics, DatosP, loadTasks, deleteTask, createTask, login, 
+    registrarPacc, getDiag, getDg, validarLetrasYEspacios, validarPeso,
+    getPacienteInfo
+   }}>
             {children}
         </TaskContext.Provider>;
 };

@@ -2,60 +2,16 @@ import React from 'react'
 import Footer from '../components/parts/Footer.jsx'
 import NavbarP from '../components/parts/NavbarP.jsx'
 import styled from 'styled-components'
-
-const Div1 = styled.div`
-    margin-top: 164px;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-`
-
-const AsideL = styled.aside`
-    margin-top: 88px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-`
-
-const H1 = styled.h1`
-    margin-left: 80px;
-    text-align: left;
-    width: 624px;
-    margin-bottom: 0px;
-    font-size: 64px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-`
-
-const P = styled.p`
-    margin-left: 80px;
-    text-align: left;
-    width: 624px;
-    font-size: 20px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-`
-
-const AsideR = styled.aside`
-    margin-top: 88px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-
-const Img = styled.img`
-    border-radius: 8px;
-    width: 508px;
-`
+import NavbarPM from '../components/parts/NavbarPM.jsx'
 
 const About = () => {
   return (
     <>
     <NavbarP/>
+    <NavbarPM DatosPM={DatosPM}/>
     <Div1>
         <AsideL>
+          {/* <Div2> */}
           <H1>Sobre Nosotros</H1>
           <P>¡Bienvenido a LIFELINE!
             Somos tu aliado en la búsqueda de respuestas sobre tu salud. 
@@ -74,8 +30,9 @@ const About = () => {
             obtener una segunda opinión o simplemente obtener orientación 
             sobre tu salud, estamos aquí para ayudarte en cada paso del camino.
           </P>
+          {/* </Div2> */}
         </AsideL>
-        <AsideR><Img src='/img/AboutImg.png'></Img></AsideR>
+        <AsideR><Img src='/img/AboutImg.svg'></Img></AsideR>
     </Div1>
     <Footer />
     </>
@@ -83,3 +40,93 @@ const About = () => {
 }
 
 export default About
+
+const DatosPM = [
+  { toPM: '/', srcPM: '/img/homepm.svg'},
+  { toPM: '/about', srcPM: '/img/create.svg'},
+  { toPM: '/login', srcPM: '/img/profile.svg'},
+]
+
+const Div1 = styled.div`
+    margin-top: 164px;
+    width: 100%;
+    display: flex;
+
+    @media (max-width: 767px) {
+    flex-direction: column;
+    margin-top: 0px;
+    }
+`
+
+// const Div2 = styled.div`
+//     position: relative;
+//     z-index: 1;
+//     display: flex;
+//     flex-direction: column;
+
+//     &::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background: gray;
+//     filter: blur(7px);
+//     z-index: -1;
+//     border-radius: 50px;
+//   }
+// `
+
+const AsideL = styled.aside`
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 767px) {
+    width: 100%;
+    }
+`
+
+const H1 = styled.h1`
+    text-align: left;
+    width: 624px;
+    margin-bottom: 0px;
+    font-size: 64px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+
+    @media (max-width: 767px) {
+      width: calc(100vw - 60px);
+    }
+`
+
+const P = styled.p`
+    text-align: left;
+    width: 624px;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+
+    @media (max-width: 767px) {
+    width: calc(100vw - 60px);
+    }
+`
+
+const AsideR = styled.aside`
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 767px) {
+    width: 100%;
+    }
+`
+
+const Img = styled.img`
+
+  @media (max-width: 767px) {
+    width: calc(100vw - 100px);
+  }
+`

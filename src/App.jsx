@@ -11,6 +11,7 @@ import Res_2 from './pages/Res_2.jsx'
 import Diagnostic from './pages/Diagnostic.jsx'
 import CreateP from './pages/CreateP.jsx'
 import { TaskContextProvider } from './context/TaskContext.jsx'
+import ProtectedRoutes from './pages/ProtectedRoutes.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,20 +20,15 @@ function App() {
     <TaskContextProvider>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>} />
         <Route path="/login" element={<Login/>} />
-        <Route path='/ListH' element={<ListH/>} />
-        {/* <Route path='/ListP' element={<ListP/>} /> */}
-        {/* <Route path='/Res_1' element={<Res_1/>} />
-        <Route path='/Res_2' element={<Res_2/>} /> */}
-        {/* <Route path='/Diagnostic' element={<Diagnostic/>} /> */}
-        <Route path='/CreateP' element={<CreateP/>} />
-        <Route path='/ListP/:id' element={<ListP/>} />
-        <Route path='/ListP/:id/:idd' element={<Res_1/>} />
-        <Route path='/ListP/:id/Res_1' element={<Res_1/>} />
-        <Route path='/ListH/:id/Res_2' element={<Res_2/>} />
-        <Route path='/ListP/:id/Diagnostic' element={<Diagnostic/>} />
+        <Route path='/ListH' element={<ProtectedRoutes><ListH/></ProtectedRoutes>} />
+        <Route path='/CreateP' element={<ProtectedRoutes><CreateP/></ProtectedRoutes>} />
+        <Route path='/ListP/:id' element={<ProtectedRoutes><ListP/></ProtectedRoutes>} />
+        <Route path='/ListP/:id/:idd' element={<ProtectedRoutes><Res_1/></ProtectedRoutes>} />
+        <Route path='/ListH/:id/Res_2' element={<ProtectedRoutes><Res_2/></ProtectedRoutes>} />
+        <Route path='/ListP/:id/Diagnostic' element={<ProtectedRoutes><Diagnostic/></ProtectedRoutes>} />
       </Routes>
     </BrowserRouter>
     </TaskContextProvider>

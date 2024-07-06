@@ -21,3 +21,6 @@ export const getDiagnostics = async (id) =>
 
 export const getDiagg = async(datos) => 
   await axios.post('http://localhost:4000/enfermedades', datos)
+
+export const getUser = async (id) =>
+  await axios.post(`http://localhost:4000/getUser/${id}`)

@@ -11,7 +11,7 @@ const ListC2 = ({data, paciente, IDC2, IDC2P, NombreC2, NomSer, LinkC2, DatosC2,
   return (
     <Div1>
         <P1>{data.id}{data.idd}</P1>
-        <StyledLink to={LinkC2}><H1>{data.nombres}{data.diagnostico}</H1></StyledLink>
+        <StyledLink to={LinkC2}><H1>{data.diagnostico}{data.nombres} {data.apellido_p} {data.apellido_m}</H1></StyledLink>
         <StyledLink to={LinkC22}><P2>{DatosC2}</P2></StyledLink>
         <H3>{data.createAt}</H3>
         <Div2><Button onClick={() => deleteTask(data.id)}><Img src='/img/more-horizontal.svg'></Img></Button></Div2>

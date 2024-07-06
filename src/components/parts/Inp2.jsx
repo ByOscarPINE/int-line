@@ -72,7 +72,7 @@ const Inp2 = ({showButton, TextIn2, x, value, onChange, inputs}) => {
                 <P>{"Sintoma(s)"}</P>
                 {inputs1.map((input1, index) => (
                     <div key={input1.key}>
-                    <Input value={input1.descripcion} onChange={(e) => handleInputChange1(index, e.target.value)} />
+                    <Input value={input1.value} onChange={(e) => handleInputChange1(index, e.target.value)} />
                     </div>
                 ))}
                 <ButtonMS onClick={addInput} srcNS={"/img/create.svg"}></ButtonMS>

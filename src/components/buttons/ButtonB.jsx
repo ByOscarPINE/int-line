@@ -16,6 +16,12 @@ const Button = styled.button`
         box-shadow: inset 0 -100px 0 0 #D5D5D5;
     }
 
+    .btns:has(.btn:hover) .btn:not(:hover){
+      scale: 0.8;
+      opacity: 0.8;
+      filter: blur(4px);
+    }
+
     &:active {
         transform: scale(0.9);
       }
