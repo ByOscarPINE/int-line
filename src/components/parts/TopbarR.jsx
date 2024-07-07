@@ -28,6 +28,7 @@ const TopbarR = ({condition, TextN}) => {
         navigate(-1);
       }
     };
+    
 
   return (
     <Div1>
@@ -53,6 +54,11 @@ const Div1 = styled.div`
     width: calc(100vw - 256px);
     display: flex;
     margin-left: 256px;
+
+    @media (max-width: 768px) {
+        margin-left: 0px;
+        width: 100%;
+    }
 `
 
 const Div2 = styled.div`
@@ -63,12 +69,21 @@ const Div2 = styled.div`
     align-items: center;
     justify-content: space-between;
     margin: 0 50px;
+
+    @media (max-width: 768px) {
+        margin: 0 20px;
+        gap: 16px;
+    }
 `
 
 const H1 = styled.h1`
     font-size: 25px;
     font-family: Inter, sans-serif;
     font-weight: 600;
+    @media (max-width: 768px) {
+      font-size: 20px;
+
+    }
 `
 
 const H2 = styled.h1`
@@ -84,4 +99,10 @@ const Img = styled.img`
 const Div3 = styled.div`
     display: flex;
     gap: 16px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      margin-top: 0px;
+      margin-right: 15px;
+    }
 `

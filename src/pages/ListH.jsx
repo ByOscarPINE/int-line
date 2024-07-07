@@ -49,6 +49,10 @@ const Div1 = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+    @media (max-width: 768px) {
+      margin: 0 auto;
+      width: 100vw;
+    }
 `
 
 const Line = styled.div`

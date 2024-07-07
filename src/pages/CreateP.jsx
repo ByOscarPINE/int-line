@@ -75,27 +75,6 @@ const CreateP = () => {
               <Button type='submit'>Registrar paciente</Button>
             </Div2>
           </Form>
-            {/* Map of items */}
-            {/* {Inputs.map((Input) => (
-                <Inp1 
-                key={Input.id} 
-
-                TextIn1={Input.TextIn1} 
-                srcNS={Input.srcNS}
-
-                showButton={Input === Inputs.length - 1}
-                value={inputs[Input.id]}
-                onChange={event => handleInputChange(event, Input.id)}
-                placeholder={Input.Place}
-                />
-            ))} */}
-            <Div2>
-                {/* <ButtonLD 
-                textLD={"Guardar Paciente"}
-                type='submit'
-                onClickk={handleSubmit}
-                /> */}
-            </Div2>
         </Div1>
     </>
   )
@@ -128,6 +107,10 @@ const Button = styled.button`
 const Form = styled.form`
     width: 661px;
     text-align: left;
+
+    @media (max-width: 768px) {
+        width: 90%;
+    }
 `
 
 const Div1 = styled.div`
@@ -136,6 +119,12 @@ const Div1 = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    @media (max-width: 768px) {
+      margin-left: 0px;
+      width: 100%;
+      margin-top: 20px;
+    }
 `
 
 const P = styled.label`
@@ -152,19 +141,11 @@ const Input = styled.input`
     border-radius: 8px;
     border: 2px solid #E0E0E0;
     margin-top: 15px;
-`
 
-const Inputs = [
-  { id: 'nombres', TextIn1: 'Nombre(s)', Place: 'Nombre(s)', validacion: valor => valor === '' || /^[A-Za-z]+$/.test(valor)},
-  { id: 'apellido_p', TextIn1: 'Apellido Paterno', Place: 'Apellido paterno', validacion: valor => valor === '' || /^[A-Za-z]+$/.test(valor)},
-  { id: 'apellido_m', TextIn1: 'Apellido Materno', validacion: valor => valor === '' || /^[A-Za-z]+$/.test(valor)},
-  { id: 'fecha_n', TextIn1: 'Fecha de Nacimiento', Place: '0000-00-00'},
-  { id: 'estado_n', TextIn1: 'Estado de Nacimiento'},
-  { id: 'municipio_n', TextIn1: 'Municipio de Nacimiento'},
-  { id: 'localidad', TextIn1: 'Localidad'},
-  { id: 'agencia', TextIn1: 'Agencia'},
-  { id: 'barrio', TextIn1: 'Barrio'},
-];
+    @media (max-width: 768px) {
+    width: 100%;
+    }
+`
 
 const DatosNS = [
     { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg'},

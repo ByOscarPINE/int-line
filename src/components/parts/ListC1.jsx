@@ -7,6 +7,9 @@ const Div1 = styled.div`
     display: flex;
     gap: 20px;
     align-items: center;
+    @media (max-width: 768px) {
+        height: 80px;    
+    }
 `
 
 const H1 = styled.h3`
@@ -15,6 +18,10 @@ const H1 = styled.h3`
     font-size: 16px;
     font-family: Inter, sans-serif;
     font-weight: 500;
+
+    @media (max-width: 768px) {
+        width: 100px;
+    }
 `
 
 const H2 = styled.h3`
@@ -40,15 +47,10 @@ const P1 = styled.p`
     font-family: Inter, sans-serif;
     font-weight: 500;
     text-align: left;
-`
 
-const Div2 = styled.div`
-    background-color: #E6E6E6;
-    width: 277px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-left: auto;
+    @media (max-width: 768px) {
+        width: auto;
+    }
 `
 
 const ListC1 = ({ListC1,InfSeC1}) => {
@@ -61,7 +63,6 @@ const ListC1 = ({ListC1,InfSeC1}) => {
         <H1>{InfSeC1}</H1>
         <H2>{ListC1}</H2>
         <H3>Fecha</H3>
-        <Div2></Div2>
     </Div1>
   )
 }

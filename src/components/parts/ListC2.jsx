@@ -12,7 +12,7 @@ const ListC2 = ({data, paciente, IDC2, IDC2P, NombreC2, NomSer, LinkC2, DatosC2,
     <Div1>
         <P1>{data.id}{data.idd}</P1>
         <StyledLink to={LinkC2}><H1>{data.diagnostico}{data.nombres} {data.apellido_p} {data.apellido_m}</H1></StyledLink>
-        <StyledLink to={LinkC22}><P2>{DatosC2}</P2></StyledLink>
+        <StyledLink to={LinkC22}><P2>Datos</P2></StyledLink>
         <H3>{data.createAt}</H3>
         <Div2><Button onClick={() => deleteTask(data.id)}><Img src='/img/more-horizontal.svg'></Img></Button></Div2>
     </Div1>  
@@ -25,6 +25,10 @@ const Div1 = styled.div`
     display: flex;
     gap: 20px;
     align-items: center;
+
+    @media (max-width: 768px) {
+        height: 80px;    
+    }
 `
 
 const H1 = styled.h3`
@@ -34,14 +38,11 @@ const H1 = styled.h3`
     font-family: Inter, sans-serif;
     font-weight: 500;
     color: black;
-`
 
-const H2 = styled.h3`
-    width: 64px;
-    text-align: left;
-    font-size: 16px;
-    font-family: Inter, sans-serif;
-    font-weight: 500;
+    @media (max-width: 768px) {
+        width: 100px;
+    }
+
 `
 
 const H3 = styled.h3`
@@ -59,6 +60,9 @@ const P1 = styled.p`
     font-family: Inter, sans-serif;
     font-weight: 500;
     text-align: left;
+    @media (max-width: 768px) {
+        width: auto;
+    }
 `
 
 
@@ -72,11 +76,12 @@ const P2 = styled.p`
 `
 
 const Div2 = styled.div`
-    width: 277px;
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-left: auto;
+    background-color: #F2F2F2;
 
 `
 

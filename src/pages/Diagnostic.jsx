@@ -141,11 +141,22 @@ const Aside1 = styled.aside`
   grid-template-rows: repeat(4, auto);
   grid-auto-flow: column;
   max-height: 100px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-height: 600px;
+    order: 1;
+    grid-template-rows: repeat(2, auto);
+  }
 `
 const Aside2 = styled.aside`
   width: 33%;
   display: flex;
   justify-content: center;
+  @media (max-width: 768px) {
+    width: 100%;
+    order: 0;
+  }
 `
 
 const Aside3 = styled.aside`
@@ -153,6 +164,10 @@ const Aside3 = styled.aside`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 768px) {
+    width: 100%;
+    order: 2;
+  }
 `
 
 const Div1 = styled.div`
@@ -160,12 +175,23 @@ const Div1 = styled.div`
   margin-left: auto;
   display: flex;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    margin-left: 0px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
 `
 const Div2 = styled.div`
   margin-top: 25px;
   display: flex;
   justify-content: center;
   width: 100%;
+
+  @media (max-width: 768px) {
+    order: 3;
+  }
 `
 
 const Button = styled.button`
@@ -188,8 +214,12 @@ const Button = styled.button`
     }
 
     &:active {
-        transform: scale(0.9);
-      }
+      transform: scale(0.9);
+    }
+
+    @media (max-width: 768px) {
+      width: 90%;
+    }
 `
 
 const Form = styled.form`

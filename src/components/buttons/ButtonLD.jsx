@@ -34,7 +34,11 @@ const Button = styled.button`
 
     &:active {
         transform: scale(0.9);
-      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 0px 20px;
+    }
 `
 
 const P = styled.p`

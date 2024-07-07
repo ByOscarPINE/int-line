@@ -58,6 +58,11 @@ const Div1 = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    @media (max-width: 768px) {
+      margin-left: 0px;
+      width: 100%;
+    }
 `
 
 const Line = styled.div`

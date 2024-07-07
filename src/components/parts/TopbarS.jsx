@@ -5,8 +5,9 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Cookies from 'js-cookie'
 import { jwtDecode } from "jwt-decode";
+import { useNavigate, useLocation } from 'react-router-dom';
 
-const TopbarS = ({Datos, Search}) => {
+const TopbarS = ({condition, Datos, Search}) => {
     
 const [consulta, setConsulta] = useState('');
 const token = Cookies.get('token');
@@ -24,35 +25,61 @@ const resultadosDeBusqueda = consulta
     )
   : [];
 
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleGoBack = (event) => {
+    event.preventDefault();
+    if (location.state?.from) {
+      navigate(location.state.from);
+    } else {
+      navigate(-1);
+    }
+  };
+
   return (
     <Div1>
+        <Link to={condition ? `/ListP/${id}` : "#"} onClick={condition ? undefined : handleGoBack}>
+            <Img1 src='/img/Back.svg'/>
+        </Link>
         <Div2>
             <H1>Buscador</H1>
             <Div3>
                 <Input value={consulta} onChange={handleChange}></Input>
-                <ul>
+                <Ul>
                 {resultadosDeBusqueda.map(paciente => (
                     <li key={paciente.id}>
                     <Link to={{ pathname: `/${paciente.id}`, state: { category: paciente.category} }}>{paciente[Search]}<p>{paciente.description}</p></Link>
                     </li>
                 ))}
-                </ul>
+                </Ul>
                 <ButtonF><Img src='/img/FiltroImg.png'/><P>Filtro</P></ButtonF>
             </Div3>
         </Div2>
         <Div4>
-            <H1>{`¡Bienvenido ${decodedToken.email}!`}</H1>
+            <H2>{`¡Bienvenido ${decodedToken.email}!`}</H2>
             <ButtonLD textLD={"Cerrar Sesion"} LDref={"/"}></ButtonLD>
         </Div4>
     </Div1>
   )
 }
 
+const Ul = styled.ul`
+    position: absolute;
+`
+
 const Div1 = styled.div`
     height: 134px;
     width: calc(100vw - 256px);
     display: flex;
     margin-left: 256px;
+    @media (max-width: 768px) {
+        margin: 0 auto;
+        width: 100vw;
+        height: 100px;
+        align-items: center;
+    }
 `
 
 const Div2 = styled.div`
@@ -61,6 +88,10 @@ const Div2 = styled.div`
     display: flex;
     flex-direction: column;
     text-align: left;
+    @media (max-width: 768px) {
+        margin-left: 15px;
+        height: auto;
+    }
 `
 
 const Div3 = styled.div`
@@ -75,6 +106,12 @@ const Div4 = styled.div`
     display: flex;
     gap: 16px;
     align-items: center;
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        margin-top: 0px;
+        margin-right: 15px;
+    }
 `
 const H1 = styled.h1`
     font-size: 20px;
@@ -82,6 +119,26 @@ const H1 = styled.h1`
     font-weight: 600;
     margin-left: 48px;
     margin-top: 24px;
+
+    @media (max-width: 768px) {
+        margin-left: 0px;
+        font-size: 16px;
+    }
+`
+
+const H2 = styled.h1`
+    font-size: 20px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    margin-left: 48px;
+    margin-top: 24px;
+
+    @media (max-width: 768px) {
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 16px;
+    }
 `
 
 
@@ -91,6 +148,10 @@ const Input = styled.input`
     border-radius: 8px;
     margin-left: 48px;
     border: 1px solid #E0E0E0;
+    @media (max-width: 768px) {
+        margin-left: 0px;
+        max-width: 90%;
+    }
 `
 
 const ButtonF = styled.button`
@@ -102,10 +163,24 @@ const ButtonF = styled.button`
     border-radius: 8px;
     border: 1px solid #E0E0E0;
     height: 43px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `
 
 const Img = styled.img`
     width: 24px;
+    @media (max-width: 768px) {
+        
+    }
+`
+
+const Img1 = styled.img`
+    display: none;
+    @media (min-width: 768px) {
+        display: none;
+    }
 `
 
 const P = styled.p`
@@ -113,6 +188,10 @@ const P = styled.p`
     font-family: Inter, sans-serif;
     font-weight: 400;
     color: #828282;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `
 
 export default TopbarS

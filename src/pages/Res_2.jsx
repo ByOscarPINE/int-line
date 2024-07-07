@@ -44,6 +44,10 @@ export default Res_2
 const Div1 = styled.div`
     width: calc(100vw - 256px);
     margin-left: auto;
+    @media (max-width: 768px) {
+      margin-left: 0px;
+      width: 100%;
+    }
 `
 
 const Box = styled.div`
