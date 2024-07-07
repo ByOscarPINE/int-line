@@ -1,26 +1,26 @@
 import axios from "axios";
 
 export const getTaskRequest = async () =>
-  await axios.get(`http://localhost:4000/tasks`);
+  await axios.get(`https://backendint-line-production.up.railway.app/tasks`);
 
 export const createTaskRequest = async (task) =>
-  await axios.post("http://localhost:4000/tasks", task);
+  await axios.post("https://backendint-line-production.up.railway.app/tasks", task);
 
 export const deleteTaskRequest = async (id) => 
-  await axios.delete(`http://localhost:4000/tasks/${id}`);
+  await axios.delete(`https://backendint-line-production.up.railway.app/tasks/${id}`);
 
 
 export const loginRequest = async (user) => 
-  await axios.post("http://localhost:4000/login", user);
+  await axios.post("https://backendint-line-production.up.railway.app/login", user);
 
 export const registerPac = async (data) => 
-  await axios.post("http://localhost:4000/registerPac", data);
+  await axios.post("https://backendint-line-production.up.railway.app/registerPac", data);
 
 export const getDiagnostics = async (id) =>
-  await axios.get(`http://localhost:4000/diagnosticos/${id}`);
+  await axios.get(`https://backendint-line-production.up.railway.app/diagnosticos/${id}`);
 
 export const getDiagg = async(datos) => 
-  await axios.post('http://localhost:4000/enfermedades', datos)
+  await axios.post('https://backendint-line-production.up.railway.app/enfermedades', datos)
 
 export const getUser = async (id) =>
-  await axios.post(`http://localhost:4000/getUser/${id}`)
+  await axios.post(`https://backendint-line-production.up.railway.app/getUser/${id}`)

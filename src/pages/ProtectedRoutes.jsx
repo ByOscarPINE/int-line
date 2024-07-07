@@ -17,7 +17,7 @@ const ProtectedRoutes = ({children}) => {
       return <div>Cargando...</div>;
     }
   
-    if (isAuthenticated) {
+    if (!isAuthenticated) {
       return <Navigate to="/login" />;
     }
   
