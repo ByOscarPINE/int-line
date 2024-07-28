@@ -36,9 +36,9 @@ const TopbarR = ({condition, TextN}) => {
             <Link to={condition ? `/ListP/${id}` : "#"} onClick={condition ? undefined : handleGoBack}>
                 <Img src='/img/Back.svg'/>
             </Link>
-            <H1>{DatosP.nombres} {DatosP.apellido_p} {DatosP.apellido_m}</H1>
+            <H1>{TextN}</H1>
             <Div3>
-              <H2>{`¡Bienvenido ${decodedToken.email}!`}</H2>
+              <H2>{`¡Bienvenido ${decodedToken.nombre}!`}</H2>
               <ButtonLD textLD={"Cerrar Sesion"} LDref={"/"}></ButtonLD>
             </Div3>
         </Div2>

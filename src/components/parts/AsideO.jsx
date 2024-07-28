@@ -10,10 +10,10 @@ const AsideO = () => {
         <P>Output</P>
         <Box>
             <PI>Nombre(s): {DatosP.nombres}</PI>
-            <PI>Apellido Paterno: {DatosP.apellido_p}</PI>
-            <PI>Apellido Materno: {DatosP.apellido_m}</PI>
-            <PI>Estado de nacimiento: {DatosP.estado_n}</PI>
-            <PI>Municipio de residencia: {DatosP.municipio_n}</PI>
+            <PI>Apellido Paterno: {DatosP.apellido_paterno}</PI>
+            <PI>Apellido Materno: {DatosP.apellido_materno}</PI>
+            <PI>Estado de nacimiento: {DatosP.estado_nacimiento}</PI>
+            <PI>Municipio de nacimiento: {DatosP.municipio_nacimiento}</PI>
             <PI>Localidad: {DatosP.localidad}</PI>
             <PI>Agencia: {DatosP.agencia}</PI>
             <PI>Barrio: {DatosP.barrio}</PI>

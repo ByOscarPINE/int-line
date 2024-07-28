@@ -4,6 +4,8 @@ import { useTasks } from '../../context/TaskContext';
 
 const AsideOD = () => {
 
+    const {InfoDg} = useTasks();
+
   return (
     <Div1>
         <P>Resultado</P>

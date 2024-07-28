@@ -14,7 +14,6 @@ import { TaskContextProvider } from './context/TaskContext.jsx'
 import ProtectedRoutes from './pages/ProtectedRoutes.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <TaskContextProvider>
@@ -27,6 +26,7 @@ function App() {
         <Route path='/CreateP' element={<ProtectedRoutes><CreateP/></ProtectedRoutes>} />
         <Route path='/ListP/:id' element={<ProtectedRoutes><ListP/></ProtectedRoutes>} />
         <Route path='/ListP/:id/:idd' element={<ProtectedRoutes><Res_1/></ProtectedRoutes>} />
+        <Route path='/ListP/:id/Result' element={<ProtectedRoutes><Res_1/></ProtectedRoutes>} />
         <Route path='/ListH/:id/Res_2' element={<ProtectedRoutes><Res_2/></ProtectedRoutes>} />
         <Route path='/ListP/:id/Diagnostic' element={<ProtectedRoutes><Diagnostic/></ProtectedRoutes>} />
       </Routes>

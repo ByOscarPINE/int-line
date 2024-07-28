@@ -9,15 +9,18 @@ import { useTasks } from '../context/TaskContext'
 
 const ListH = () => {
 
-  const {Pacientes, loadTasks} = useTasks();
+  const {Pacientes, loadPacientes} = useTasks();
 
-  useEffect (() => {
-    try {
-      loadTasks();
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+  if (Pacientes.length === 0) {
+    useEffect (() => {
+      try {
+        loadPacientes();
+        console.log('Loading Pacientes');
+      } catch (error) {
+        console.log(error);
+      }
+    }, []);
+  }
 
   return (
     <>
@@ -31,9 +34,10 @@ const ListH = () => {
             <Line />
             <ListC2 
               data={paciente}
-              
-              LinkC2={{pathname: `/ListP/${paciente.id}`}}
-              LinkC22={{pathname: `/ListH/${paciente.id}/Res_2`}}
+              Datos={'Datos'}
+              idd={paciente.id_paciente}
+              LinkC2={{pathname: `/ListP/${paciente.id_paciente}`}}
+              LinkC22={{pathname: `/ListH/${paciente.id_paciente}/Res_2`}}
             />
           </React.Fragment>
         ))}
@@ -44,7 +48,7 @@ const ListH = () => {
 
 const Div1 = styled.div`
     width: calc(100vw - 256px);
-    height: 100vh;
+    height: 100%;
     margin-left: 256px;
     display: flex;
     align-items: center;

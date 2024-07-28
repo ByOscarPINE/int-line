@@ -12,28 +12,41 @@ import { useEffect } from 'react';
 
 const ListP = () => {
 
-  const {Diagnostics, getDiag} = useTasks();
+  const {DiagID, Diagnostics, getDiag} = useTasks();
 
   const {id} = useParams();
   
-  useEffect (() => {
-    try {
-      getDiag(id);
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+  if (DiagID !== id) {
+    useEffect (() => {
+      try {
+        getDiag(id);
+        console.log('Loading Diagnostic');
+      } catch (error) {
+        console.log(error);
+      }
+    }, []);
+  }
 
   const DatosNS = [
     { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg'},
     { toNS: `/ListP/${id}`, TextNS: 'Buscar', srcNS: '/img/search.svg', backgroundColor: '#F2F2F2'},
     { toNS: `/ListP/${id}/Diagnostic`, TextNS: 'Diagnosticar', srcNS: '/img/create.svg'},
 ]
+  if (Diagnostics.length === 0) {
+    return     <>
+    <NavbarS NS={DatosNS}/>
+    <TopbarS Datos={Diagnostics} Search={"Nombre_Diagnostico"}/>
+    <Div1>
+      <ListC1 InfSeC1={"Diagnostico"}></ListC1>
+      <p>Cargando...</p>
+    </Div1>
+  </>
+  }
 
   return (
     <>
       <NavbarS NS={DatosNS}/>
-      <TopbarS Datos={Diagnostics} Search={"diagnostico"} />
+      <TopbarS Datos={Diagnostics} Search={"Nombre_Diagnostico"}/>
       <Div1>
         <ListC1 InfSeC1={"Diagnostico"}></ListC1>
         {Diagnostics.map((diagnostic, index) => (
@@ -41,8 +54,9 @@ const ListP = () => {
           <Line />
           <ListC2
           data={diagnostic} 
-
-          LinkC2={{pathname: `/ListP/${id}/${diagnostic.idd}`}}
+          idd={id + '-'+ diagnostic.ID_Diagnostico_Paciente}
+          Datos={''}
+          LinkC2={{pathname: `/ListP/${id}/${diagnostic.ID_Diagnostico_Paciente}`}}
           />
         </React.Fragment>
         ))}
@@ -53,7 +67,7 @@ const ListP = () => {
 
 const Div1 = styled.div`
     width: calc(100vw - 256px);
-    height: 100vh;
+    height: 100%;
     margin-left: 256px;
     display: flex;
     align-items: center;

@@ -7,12 +7,14 @@ import { useState } from 'react'
 import ButtonLD from '../components/buttons/ButtonLD'
 import { useTasks } from '../context/TaskContext'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 
 
 const CreateP = () => {
 
-    const {registrarPacc, validarLetrasYEspacios} = useTasks();
+    const {registrarPacc, validarLetrasYEspacios, loadPacientes} = useTasks();
     const { register, handleSubmit } = useForm();
+    const navigate = useNavigate();
     
       // registrarPacc(inputs)
     //   const [inputs, setInputs] = useState(
@@ -49,28 +51,34 @@ const CreateP = () => {
         <NavbarS NS={DatosNS} />
         <TopbarR TopRL={"/ListH"} TextN={"Crear paciente"}/>
         <Div1>
-          <Form onSubmit={handleSubmit(values => {
+          <Form onSubmit={handleSubmit(async values => {
             console.log(values)
-            registrarPacc(values)
+            const response = await registrarPacc(values)
+            loadPacientes();
+            if (response.status === 200) {
+              navigate('/ListH')
+            } else {
+              alert('Error al registrar paciente')
+            }
           })}>
             <P>Nombre(s)</P>
             <Input type='text' placeholder='Nombres(s)' {...register('nombres', {required: true, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios}></Input>
             <P>Apellido Paterno</P>
-            <Input type='text' placeholder='Apellido paterno' {...register('apellido_p', {required: true, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios}></Input>
+            <Input type='text' placeholder='Apellido paterno' {...register('apellido_paterno', {required: true, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios}></Input>
             <P>Apellido Materno</P>
-            <Input type='text' placeholder='Apellido materno' {...register('apellido_m', {required: true, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios}></Input>
+            <Input type='text' placeholder='Apellido materno' {...register('apellido_materno', {required: true, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios}></Input>
             <P>Fecha de nacimiento</P>
-            <Input type='date' {...register('fecha_n', {required: true})}></Input>
+            <Input type='date' {...register('fecha_nacimiento', {required: true})}></Input>
             <P>Estado de nacimiento</P>
-            <Input type='text' placeholder='Estado de nacimiento' {...register('estado_n', {required: true})} onChange={validarLetrasYEspacios}></Input>
+            <Input type='text' placeholder='Estado de nacimiento' {...register('estado_nacimiento', {required: true})} onChange={validarLetrasYEspacios}></Input>
             <P>Municipio de nacimiento</P>
-            <Input type='text' placeholder='Municipio de nacimiento' {...register('municipio', {required: true, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios}></Input>
+            <Input type='text' placeholder='Municipio de nacimiento' {...register('municipio_nacimiento', {required: true, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios}></Input>
             <P>Localidad</P>
-            <Input type='text' placeholder='Localidad' {...register('localidad', {required: false})}></Input>
+            <Input type='text' placeholder='Localidad' {...register('localidad', {required: false})} onChange={validarLetrasYEspacios}></Input>
             <P>Agencia</P>
-            <Input type='text' placeholder='Agencia' {...register('agencia', {required: false})}></Input>
+            <Input type='text' placeholder='Agencia' {...register('agencia', {required: false})} onChange={validarLetrasYEspacios}></Input>
             <P>Barrio</P>
-            <Input type='text' placeholder='Barrio' {...register('barrio', {required: false})}></Input>
+            <Input type='text' placeholder='Barrio' {...register('barrio', {required: false})} onChange={validarLetrasYEspacios}></Input>
             <Div2>
               <Button type='submit'>Registrar paciente</Button>
             </Div2>

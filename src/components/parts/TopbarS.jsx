@@ -8,7 +8,7 @@ import { jwtDecode } from "jwt-decode";
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const TopbarS = ({condition, Datos, Search}) => {
-    
+
 const [consulta, setConsulta] = useState('');
 const token = Cookies.get('token');
 
@@ -58,7 +58,7 @@ const resultadosDeBusqueda = consulta
             </Div3>
         </Div2>
         <Div4>
-            <H2>{`¡Bienvenido ${decodedToken.email}!`}</H2>
+            <H2>{`¡Bienvenido ${decodedToken.nombre}!`}</H2>
             <ButtonLD textLD={"Cerrar Sesion"} LDref={"/"}></ButtonLD>
         </Div4>
     </Div1>

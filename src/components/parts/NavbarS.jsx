@@ -4,6 +4,44 @@ import ButtonNS from '../buttons/ButtonNS'
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
 
+const NavbarS = ({NS}) => {
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleSidenav = () => {
+      setIsOpen(!isOpen);
+    };
+
+    const {id} = useParams();
+    
+  return (
+    <D>
+    <Button onClick={toggleSidenav}>Open</Button>
+    <Overlay isOpen={isOpen} onClick={toggleSidenav} />
+    <Div1 isOpen={isOpen}>
+        <Line/>
+        <Div2>
+            <H1>LIFELINE</H1>
+            <Img src='/img/Logo.png'></Img>
+        </Div2>
+        <Div3>
+        {NS.map((item, index) => (
+            <ButtonNS 
+            key={index} 
+            toNS={item.toNS} 
+            TextNS={item.TextNS} 
+            srcNS={item.srcNS}
+            backgroundColor={item.backgroundColor}
+            />
+        ))}
+        </Div3>
+    </Div1>
+    </D>
+  )
+}
+
+export default NavbarS
+
 const Div1 = styled.div`
   position: fixed;
   height: 100vh;
@@ -85,44 +123,3 @@ const Button = styled.button`
 const D = styled.div`
   display: flex;
 `;
-
-const NavbarS = ({NS}) => {
-
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleSidenav = () => {
-      setIsOpen(!isOpen);
-    };
-
-    const {id} = useParams();
-
-    const data = id;
-
-    
-  return (
-    <D>
-    <Button onClick={toggleSidenav}>Open</Button>
-    <Overlay isOpen={isOpen} onClick={toggleSidenav} />
-    <Div1 isOpen={isOpen}>
-        <Line/>
-        <Div2>
-            <H1>LIFELINE</H1>
-            <Img src='/img/Logo.png'></Img>
-        </Div2>
-        <Div3>
-        {NS.map((item, index) => (
-            <ButtonNS 
-            key={index} 
-            toNS={item.toNS} 
-            TextNS={item.TextNS} 
-            srcNS={item.srcNS}
-            backgroundColor={item.backgroundColor}
-            />
-        ))}
-        </Div3>
-    </Div1>
-    </D>
-  )
-}
-
-export default NavbarS

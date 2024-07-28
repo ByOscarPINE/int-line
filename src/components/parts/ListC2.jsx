@@ -1,20 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import { useTasks } from '../../context/TaskContext'
 
-const ListC2 = ({data, paciente, IDC2, IDC2P, NombreC2, NomSer, LinkC2, DatosC2, Fecha, LinkC22}) => {
+const ListC2 = ({data, LinkC2, LinkC22, Datos, idd}) => {
 
     const {deleteTask} = useTasks();
 
+    const fecha = data.Fecha.split('T')[0];
+
+    if (!data) {
+        return <p>Cargado</p>;
+    }
+
+    const {id} = useParams();
+
   return (
     <Div1>
-        <P1>{data.id}{data.idd}</P1>
-        <StyledLink to={LinkC2}><H1>{data.diagnostico}{data.nombres} {data.apellido_p} {data.apellido_m}</H1></StyledLink>
-        <StyledLink to={LinkC22}><P2>Datos</P2></StyledLink>
-        <H3>{data.createAt}</H3>
-        <Div2><Button onClick={() => deleteTask(data.id)}><Img src='/img/more-horizontal.svg'></Img></Button></Div2>
+        <P1>{idd}</P1>
+        <StyledLink to={LinkC2}><H1>{data.Nombre_Diagnostico}{data.nombres} {data.apellido_paterno} {data.apellido_materno}</H1></StyledLink>
+        <StyledLink to={LinkC22}><P2>{Datos}</P2></StyledLink>
+        <H3>{fecha}</H3>
+        <Div2><Button onClick={() => deleteTask(data.id_paciente)}><Img src='/img/more-horizontal.svg'></Img></Button></Div2>
     </Div1>  
   )
 }

@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NavbarS from '../components/parts/NavbarS'
 import TopbarR from '../components/parts/TopbarR'
 import styled from 'styled-components'
-import { useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { useTasks } from '../context/TaskContext'
 import { useForm } from 'react-hook-form'
@@ -12,9 +12,28 @@ import ButtonMS from '../components/buttons/ButtonMS'
 
 const Diagnostic = () => {
     const {id} = useParams();
-    const {registrarPacc, validarLetrasYEspacios, validarPeso, getDg} = useTasks();
+    const {Pacientes, inserDiagnostic ,registrarPacc, validarLetrasYEspacios, validarNumeros, getDg, getSint, Sintomas} = useTasks();
     const { register, handleSubmit } = useForm();
     const formRef = useRef(null);
+
+    useEffect(() => {
+      let isActive = true; // Controla si el componente está montado
+    
+      const fetchSintomas = async () => {
+        try {
+          await getSint();
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    
+      fetchSintomas();
+    
+      // Función de limpieza
+      return () => {
+        isActive = false; // Indica que el componente se ha desmontado
+      };
+    }, []);
 
     const DatosNS = [
       { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg'},
@@ -26,7 +45,7 @@ const Diagnostic = () => {
       obesidad: false,
       neumonia: false,
       asma: false,
-      artritis: false,
+      artitris: false,
       gota: false,
       epilepsia: false,
       hipertension: false
@@ -36,43 +55,92 @@ const Diagnostic = () => {
       { key: "sintoma: " + 0, descripcion: '' },
     ]);
 
+    const [activeInput, setActiveInput] = useState(null);
+
+    // const [values, setValue] = useState([]);
+
 
     const handleInputChange1 = (index, newValue) => {
       const newInputs = [...inputs1];
+      setConsulta(newValue);
       newInputs[index].descripcion = newValue;
       setInputs1(newInputs);
+      console.log(inputs1);
     };
+
+    const [consulta, setConsulta] = useState('');
+
+    const Search = "Nombre";
+
+    console.log(Pacientes)
+
+    const resultadosDeBusqueda = consulta
+  ? Sintomas.filter(paciente =>
+      paciente[Search].toLowerCase().includes(consulta.toLowerCase())
+    ).slice(0, 5)
+  : [];
   
     const addInput = () => {
-      setInputs1([...inputs1, { key: "sintoma: " + inputs1.length, descripcion: '' }]);
+      if(inputs1.length < 5){
+        setInputs1([...inputs1, { key: "sintoma: " + inputs1.length, descripcion: '' }]);
+      }
     };
 
-    const onClick = () => {
-      console.log(inputs1);
-      diagnosticarEnfermedad();
-      getDg(inputs1);
-    }
+    // const onClick = () => {
+    //   console.log(inputs1);
+    //   diagnosticarEnfermedad();
+    //   getDg(inputs1);
+    // }
 
     const handleExternalSubmit = () => {
-      formRef.current.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true })); // Paso 2: Simular el envío
+      formRef.current.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
     };
 
     const handleSwitchChange = (name, isActive) => {
       setSwitchStates(prev => ({ ...prev, [name]: isActive }));
     };
 
+    const navigate = useNavigate();
 
-    const onSubmit = values => {
+    const onSubmit = async (values) => {
+      // const descripcionesString = inputs1.map(objeto => objeto.descripcion).join('||');
+      const nombre = prompt("Nombre de el diagnostico");
+      const descripciones = inputs1.map(objeto => objeto.descripcion);
+
       const combinedObj = {
         ...switchStates,
+        nombre: nombre,
+        descripciones: descripciones,
         ...values,
       };
-      console.log(combinedObj);
-      console.log(inputs1);
-      registrarPacc(combinedObj);
-      getDg(inputs1);
-    };
 
+      if(values.temperatura > 37.5){
+        if(combinedObj.descripciones.includes("Fiebre") || combinedObj.descripciones.includes("fiebre")){         
+        }
+        else{
+          combinedObj.descripciones.push("Fiebre");
+        }
+      }
+
+      console.log(combinedObj)
+
+//       console.log(combinedObj)
+
+// // Ahora, descripciones es un array que contiene solo las descripciones de los objetos
+//       console.log(descripciones);
+//       console.log(inputs1);
+      const response = await inserDiagnostic(combinedObj, id);
+
+      if (response.status === 200) {
+        navigate(`/ListP/${id}/${response.data}`);
+      } else {
+        alert("Error al diagnosticar al paciente");
+      }  
+
+      console.log(response);
+      // registrarPacc(combinedObj);
+      // getDg(inputs1);
+    };
   
   return (
     <>
@@ -84,7 +152,7 @@ const Diagnostic = () => {
             <Switch textoSW1={"Obesidad"} id={"obesidad"} onChange={handleSwitchChange}></Switch>
             <Switch textoSW1={"Neumonía"} id={"neumonia"} onChange={handleSwitchChange}></Switch>
             <Switch textoSW1={"Asma"} id={"asma"} onChange={handleSwitchChange}></Switch>
-            <Switch textoSW1={"Artitris"} id={"artitris"} onChange={handleSwitchChange}></Switch>
+            <Switch textoSW1={"Atritis"} id={"artritis"} onChange={handleSwitchChange}></Switch>
             <Switch textoSW1={"Gota"} id={"gota"} onChange={handleSwitchChange}></Switch>
             <Switch textoSW1={"Epilepsia"} id={"epilepsia"} onChange={handleSwitchChange}></Switch>
             <Switch textoSW1={"Hipetersion"} id={"hipertension"} onChange={handleSwitchChange}></Switch>
@@ -93,36 +161,61 @@ const Diagnostic = () => {
           <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}
             >
               <P>Presión arterial</P>
-              <Input type='text' placeholder='Presión arterial' {...register('presion', {required: false, pattern: /^[0-9.\s]+$/})}></Input>
+              <Input type='text' placeholder='Presión arterial' {...register('presion', {required: false, pattern: /^[0-9.\s]+$/})} onChange={validarNumeros}></Input>
               <P>Pulso</P>
-              <Input type='text' placeholder='Pulso' {...register('pulso', {required: false, pattern: /^[0-9.\s]+$/})} ></Input>
+              <Input type='text' placeholder='Pulso' {...register('pulso', {required: false, pattern: /^[0-9.\s]+$/})} onChange={validarNumeros} ></Input>
               <P>Alergias</P>
-              <Input type='text' placeholder='Alergias' {...register('alergias', {required: false, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})}></Input>
+              <Input type='text' placeholder='Alergias' {...register('alergias', {required: false, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios}></Input>
               <P>Antecedentes</P>
-              <Input type='text' placeholder='Antecedentes' {...register('antecedentes', {required: false, pattern: /^[0-9.\s]+$/})}></Input>
+              <Input type='text' placeholder='Antecedentes' {...register('antecedentes', {required: false, pattern: /^[0-9.\s]+$/})} onChange={validarNumeros}></Input>
               <P>Otros</P>
-              <Input type='text' placeholder='Otros' {...register('otros', {required: false, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} ></Input>
+              <Input type='text' placeholder='Otros' {...register('otros', {required: false, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios} ></Input>
               <P>Peso</P>
-              <Input type='text' placeholder='Peso' {...register('peso', {required: false, pattern: /^[0-9.]+$/})}></Input>
+              <Input type='text' placeholder='Peso' {...register('peso', {required: false, pattern: /^[0-9.]+$/})} onChange={validarNumeros} ></Input>
               <P>Estatura</P>
-              <Input type='text' placeholder='Estatura' {...register('estatura', {required: false, pattern: /^[0-9.\s]+$/})}></Input>
+              <Input type='text' placeholder='Estatura' {...register('estatura', {required: false, pattern: /^[0-9\s]+$/})} onChange={validarNumeros} ></Input>
               <P>Temperatura</P>
-              <Input type='text' placeholder='Temperatura' {...register('temperatura', {required: false, pattern: /^[0-9.]+$/})} ></Input>
+              <Input type='text' placeholder='Temperatura' {...register('temperatura', {required: false, pattern: /^[0-9.]+$/})} onChange={validarNumeros} ></Input>
             </Form>
           </Aside2>
           <Aside3>
             <Div3>
               <P>{"Sintoma(s)"}</P>
+                {/* {inputs1.map((input1, index) => (
+                  <div key={input1.key}>
+                  <Input value={input1.value ? input1.value : values} onChange={(e) => handleInputChange1(index, e.target.value)} onFocus={() => setActiveInput(index)}/>
+                  {activeInput === index && resultadosDeBusqueda.map(paciente => (
+                        <Li key={input1.key}>
+                          <p onClick={() => handleInputChange1(index, paciente[Search], setValue(paciente[Search]))}>{paciente[Search]}</p>
+                        </Li>
+                  ))}
+                  </div>
+                ))} */}
+
                 {inputs1.map((input1, index) => (
                   <div key={input1.key}>
-                  <Input value={input1.value} onChange={(e) => handleInputChange1(index, e.target.value)} />
+                    <Input 
+                      value={input1.value ? input1.value : input1.descripcion} 
+                      onChange={(e) => {handleInputChange1(index, e.target.value);
+                      }} 
+                      onFocus={() => setActiveInput(index)}
+                    />
+                    <Ul>
+                      {activeInput === index && resultadosDeBusqueda.map(paciente => (
+                        <Li key={index}>
+                          <p onClick={() => {
+                            handleInputChange1(index, paciente[Search])
+                          }}>{paciente[Search]}</p>
+                        </Li>
+                      ))}
+                    </Ul>
                   </div>
                 ))}
               <ButtonMS onClick={addInput} srcNS={"/img/create.svg"}></ButtonMS>
             </Div3>
           </Aside3>
           <Div2>
-            <Button onClick={handleExternalSubmit}>Presiona aquí</Button>
+            <Button onClick={handleExternalSubmit}>Diagnosticar</Button>
           </Div2>
         </Div1>
     </>
@@ -130,6 +223,13 @@ const Diagnostic = () => {
 }
 
 export default Diagnostic
+
+const Ul = styled.ul`
+    position: absolute;
+`
+
+const Li = styled.li`
+`
 
 const Div3 = styled.div`
   margin-top:15px;

@@ -29,7 +29,7 @@ const Res_2 = () => {
   return (
     <>
     <NavbarS NS={DatosNS}/>
-    <TopbarR/>
+    <TopbarR TextN={'Datos '}/>
     <Div1>
       <Box>
         <AsideO/>
