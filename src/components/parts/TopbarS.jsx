@@ -108,9 +108,7 @@ const Div4 = styled.div`
     align-items: center;
     
     @media (max-width: 768px) {
-        flex-direction: column;
-        margin-top: 0px;
-        margin-right: 15px;
+    DISPLAY: NONE;
     }
 `
 const H1 = styled.h1`

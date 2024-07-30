@@ -5,16 +5,26 @@ const AsideI = () => {
 
     const {InfoDg} = useTasks();
 
-    const Edad = InfoDg.fecha_nacimiento ? Math.floor((new Date() - new Date(InfoDg.fecha_nacimiento).getTime()) / 3.15576e+10) : 0;
+    const Fecha = InfoDg.Fecha.split('T')[0];
 
-    // const fecha = InfoDg.Fecha.split('T')[0];
+
+
+    const hoy = new Date();
+    const fechaNac = new Date(InfoDg.fecha_nacimiento);
+    let Edad = hoy.getFullYear() - fechaNac.getFullYear();
+    const mes = hoy.getMonth() - fechaNac.getMonth();
+  
+    // Ajustar si el cumpleaños no ha ocurrido aún este año
+    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
+      Edad--;
+    }
   return (
     <Div1>
         <P>Paciente</P>
         <Box>
             <PI>Nombre: {InfoDg.nombres}</PI>
-            <PI>Fecha de consulta: {InfoDg.Fecha}</PI>
-            <PI>Edad: {}</PI>
+            <PI>Fecha de consulta: {Fecha}</PI>
+            <PI>Edad: {Edad}</PI>
             <PI>Peso: {InfoDg.Peso}</PI>
             <PI>Estatura: {InfoDg.Estatura}</PI>
             <PI>Sintomas: <br/><br/>{InfoDg.Sintoma_1}<br/>{InfoDg.Sintoma_2}</PI>

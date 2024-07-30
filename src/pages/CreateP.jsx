@@ -132,6 +132,7 @@ const Div1 = styled.div`
       margin-left: 0px;
       width: 100%;
       margin-top: 20px;
+      margin-bottom: 20px;
     }
 `
 

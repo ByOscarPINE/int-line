@@ -152,7 +152,8 @@ const Div1 = styled.div`
 
   @media (max-width: 767px) {
   margin-top: 0px;
-  height: 50vh;
+  height: 100%;
+  margin-bottom: 30px;
   }
 `;
 

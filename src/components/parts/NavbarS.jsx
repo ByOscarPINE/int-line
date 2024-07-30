@@ -1,22 +1,39 @@
 import React from 'react'
 import styled from 'styled-components'
 import ButtonNS from '../buttons/ButtonNS'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useState } from 'react'
+import Cookie from 'js-cookie'
 
 const NavbarS = ({NS}) => {
 
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
-    const toggleSidenav = () => {
-      setIsOpen(!isOpen);
-    };
+  const toggleSidenav = () => {
+    setIsOpen(!isOpen);
+  };
 
-    const {id} = useParams();
+  const {id} = useParams();
+
+  const onButtonClick = () => {
+    Cookie.remove('token');
+    navigate('/')
+  }
     
   return (
     <D>
-    <Button onClick={toggleSidenav}>Open</Button>
+      <Boxside>
+        <Div11>
+          <Button onClick={toggleSidenav}>-</Button>
+        </Div11>
+        <Div12>
+          <Img2 src='/img/Logo.png'></Img2>
+        </Div12>
+        <Div13>
+          <ButtonSC onClick={onButtonClick}>Cerrar Sesion</ButtonSC>
+        </Div13>
+      </Boxside>
     <Overlay isOpen={isOpen} onClick={toggleSidenav} />
     <Div1 isOpen={isOpen}>
         <Line/>
@@ -41,6 +58,22 @@ const NavbarS = ({NS}) => {
 }
 
 export default NavbarS
+
+const Div11 = styled.div`
+  width: 33%;
+  display: flex;
+`
+
+const Div12 = styled.div`
+    width: 33%;
+`
+
+const Div13 = styled.div`
+    width: 33%;
+    display: flex;
+    justify-content: flex-end;
+`
+
 
 const Div1 = styled.div`
   position: fixed;
@@ -115,10 +148,47 @@ const Overlay = styled.div`
 
 
 const Button = styled.button`
-  @media (min-width: 768px) {
+  width: 40px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+`;
+
+const Boxside = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 769px) {
     display: none;
   }
-`;
+`
+
+const ButtonSC = styled.button`
+    border-radius: 8px;
+    background-color: #000000;
+    cursor: pointer;
+    color: white;
+    border: black;
+    transition: ease-out 0.5s;
+    padding: 10px 10px;
+    margin-right: 10px;
+
+    &:hover {
+      box-shadow: inset 0 -100px 0 0 gray;
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+`
+
+
+const Img2 = styled.img`
+    height: 50px;
+`
 
 const D = styled.div`
   display: flex;

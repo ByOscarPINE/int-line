@@ -33,9 +33,9 @@ const TopbarR = ({condition, TextN}) => {
   return (
     <Div1>
         <Div2>
-            <Link to={condition ? `/ListP/${id}` : "#"} onClick={condition ? undefined : handleGoBack}>
-                <Img src='/img/Back.svg'/>
-            </Link>
+        <StyledLink to={condition ? `/ListP/${id}` : "#"} onClick={condition ? undefined : handleGoBack}>
+        <Img src='/img/Back.svg' alt='Back'/>
+      </StyledLink>
             <H1>{TextN}</H1>
             <Div3>
               <H2>{`¡Bienvenido ${decodedToken.nombre}!`}</H2>
@@ -58,12 +58,13 @@ const Div1 = styled.div`
     @media (max-width: 768px) {
         margin-left: 0px;
         width: 100%;
+        height: 100px;
     }
 `
 
 const Div2 = styled.div`
     width: 100%;
-    height: 134px;
+    height: auto;
     display: flex;
     text-align: left;
     align-items: center;
@@ -71,8 +72,9 @@ const Div2 = styled.div`
     margin: 0 50px;
 
     @media (max-width: 768px) {
-        margin: 0 20px;
-        gap: 16px;
+      margin: 0 20px;
+      gap: 20px;
+      justify-content: center;
     }
 `
 
@@ -82,7 +84,6 @@ const H1 = styled.h1`
     font-weight: 600;
     @media (max-width: 768px) {
       font-size: 20px;
-
     }
 `
 
@@ -94,6 +95,9 @@ const H2 = styled.h1`
 
 const Img = styled.img`
     width: 40px;
+    @media (max-width: 768px) {
+      width: 30px;
+    }
 `
 
 const Div3 = styled.div`
@@ -101,8 +105,14 @@ const Div3 = styled.div`
     gap: 16px;
 
     @media (max-width: 768px) {
-      flex-direction: column;
-      margin-top: 0px;
-      margin-right: 15px;
+    display: none;
     }
 `
+
+const StyledLink = styled(Link)`
+  @media (max-width: 768px) {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+  }
+`;

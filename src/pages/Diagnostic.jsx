@@ -12,7 +12,7 @@ import ButtonMS from '../components/buttons/ButtonMS'
 
 const Diagnostic = () => {
     const {id} = useParams();
-    const {Pacientes, inserDiagnostic ,registrarPacc, validarLetrasYEspacios, validarNumeros, getDg, getSint, Sintomas} = useTasks();
+    const {Pacientes, inserDiagnostic ,getDiag, validarLetrasYEspacios, validarNumeros, getDg, getSint, Sintomas} = useTasks();
     const { register, handleSubmit } = useForm();
     const formRef = useRef(null);
 
@@ -102,6 +102,7 @@ const Diagnostic = () => {
 
     const navigate = useNavigate();
 
+
     const onSubmit = async (values) => {
       // const descripcionesString = inputs1.map(objeto => objeto.descripcion).join('||');
       const nombre = prompt("Nombre de el diagnostico");
@@ -132,6 +133,7 @@ const Diagnostic = () => {
       const response = await inserDiagnostic(combinedObj, id);
 
       if (response.status === 200) {
+        getDiag(id);
         navigate(`/ListP/${id}/${response.data}`);
       } else {
         alert("Error al diagnosticar al paciente");
@@ -181,17 +183,6 @@ const Diagnostic = () => {
           <Aside3>
             <Div3>
               <P>{"Sintoma(s)"}</P>
-                {/* {inputs1.map((input1, index) => (
-                  <div key={input1.key}>
-                  <Input value={input1.value ? input1.value : values} onChange={(e) => handleInputChange1(index, e.target.value)} onFocus={() => setActiveInput(index)}/>
-                  {activeInput === index && resultadosDeBusqueda.map(paciente => (
-                        <Li key={input1.key}>
-                          <p onClick={() => handleInputChange1(index, paciente[Search], setValue(paciente[Search]))}>{paciente[Search]}</p>
-                        </Li>
-                  ))}
-                  </div>
-                ))} */}
-
                 {inputs1.map((input1, index) => (
                   <div key={input1.key}>
                     <Input 
@@ -256,6 +247,7 @@ const Aside2 = styled.aside`
   @media (max-width: 768px) {
     width: 100%;
     order: 0;
+    margin-bottom: 20px;
   }
 `
 
@@ -277,10 +269,10 @@ const Div1 = styled.div`
   flex-wrap: wrap;
 
   @media (max-width: 768px) {
-    margin-left: 0px;
     width: 100%;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
   }
 `
 const Div2 = styled.div`
@@ -323,13 +315,19 @@ const Button = styled.button`
 `
 
 const Form = styled.form`
-    width: 95%;
     text-align: left;
     margin-top: 10px;
     display: grid;
     grid-template-rows: repeat(8, auto);
     grid-auto-flow: column;
     grid-column-gap: 40px;
+
+    @media (max-width: 768px) {
+      width: 90%;
+      grid-template-rows: repeat(8, auto);
+      grid-auto-flow: row;
+      grid-row-gap: 20px;
+    }
 `
 const P = styled.label`
     margin: 0px;

@@ -1,25 +1,30 @@
 import axios from "axios";
 
+const URL = 'https://backendint-line-production.up.railway.app'
+
 export const loginRequest = async (user) => 
-  await axios.post("http://localhost:4000/login", user);
+  await axios.post(`${URL}/login`, user);
 
 export const getPacientes = async () =>
-  await axios.get(`http://localhost:4000/pacientes`);
+  await axios.get(`${URL}/pacientes`);
 
 export const registerPac = async (data) => 
-  await axios.put("http://localhost:4000/registerPac", data);
+  await axios.put(`${URL}/registerPac`, data);
 
 export const insertDiag = async (data, id) =>
-  await axios.put(`http://localhost:4000/insertDiagnostico/${id}`, data);
+  await axios.put(`${URL}/insertDiagnostico/${id}`, data);
 
 export const getDiagnostics = async (id) =>
-  await axios.get(`http://localhost:4000/diagnosticos/${id}`);
+  await axios.get(`${URL}/diagnosticos/${id}`);
 
 export const getInfoDg = async (idpa, iddi) =>
-  await axios.get(`http://localhost:4000/getInfoDg/${idpa}/${iddi}`);
+  await axios.get(`${URL}/getInfoDg/${idpa}/${iddi}`);
 
 export const getSitomas = async () =>
-  await axios.get(`http://localhost:4000/getSintomas`);
+  await axios.get(`${URL}/getSintomas`);
+
+export const getUser = async (id) =>
+  await axios.post(`${URL}/getUser/${id}`)
 
 
 export const createTaskRequest = async (task) =>
@@ -30,6 +35,3 @@ export const deleteTaskRequest = async (id) =>
 
 export const getDiagg = async(datos) => 
   await axios.post('https://backendint-line-production.up.railway.app/enfermedades', datos)
-
-export const getUser = async (id) =>
-  await axios.post(`http://localhost:4000/getUser/${id}`)

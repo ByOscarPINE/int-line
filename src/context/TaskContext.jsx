@@ -110,6 +110,7 @@ export const TaskContextProvider = ({ children }) => {
 
   const getPacienteInfo = async (id) => {
     try {
+      setDatosP([]);
       const responsepac = await getUser(id);
       setDatosP(responsepac.data)
     } catch (error) {
@@ -166,8 +167,9 @@ export const TaskContextProvider = ({ children }) => {
       setDiagnostics(diag.data[0])
       setDiagID(diag.data[1][0].ID_Paciente)
     } catch (error) {
-      setDiagnostics([])
       console.log(error)
+      setDiagnostics(error)
+      setDiagID('0')
     }
   }
 

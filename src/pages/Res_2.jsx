@@ -10,26 +10,41 @@ import { useEffect } from 'react'
 const Res_2 = () => {
   const {id} = useParams();
 
-  const { getPacienteInfo} = useTasks();
+  const { getPacienteInfo, DatosP} = useTasks();
 
-  useEffect (() => {
-    try {
-      getPacienteInfo(id);
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
-  
+  if (id !== DatosP.id_paciente) {
+    useEffect (() => {
+      try {
+        getPacienteInfo(id);
+      } catch (error) {
+        console.log(error);
+      }
+    }, []);
+  }
+
 
     const DatosNS = [
         { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg'},
         { toNS: `/ListH/${id}/Res_2`, TextNS: 'Datos', srcNS: '/img/create.svg', backgroundColor: '#F2F2F2'},
     ]
 
+
+  if (DatosP.length === 0) {
+    return     <>
+    <NavbarS NS={DatosNS}/>
+    <TopbarR TextN={'Datos '}/>
+    <Div1>
+      <Box>
+        <p>cargando.....</p>
+      </Box>
+    </Div1>
+    </>
+  }
+
   return (
     <>
     <NavbarS NS={DatosNS}/>
-    <TopbarR TextN={'Datos '}/>
+    <TopbarR TextN={DatosP.nombres + ' ' + DatosP.apellido_paterno + ' ' + DatosP.apellido_materno}/>
     <Div1>
       <Box>
         <AsideO/>
