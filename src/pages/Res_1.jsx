@@ -7,12 +7,13 @@ import AsideI from '../components/parts/AsideI'
 import { useParams } from 'react-router-dom'
 import { useTasks } from '../context/TaskContext'
 import {jsPDF} from 'jspdf';
+import { get } from 'react-hook-form'
 
 const Res_1 = () => {
   const {id} = useParams();
   const {idd} = useParams();
 
-  const { InfoDg, getHisDg} = useTasks();
+  const { InfoDg, getHisDg, getDg} = useTasks();
 
   if (id == InfoDg.ID_Paciente && idd == InfoDg.ID_Diagnostico_Paciente) {
   } else {

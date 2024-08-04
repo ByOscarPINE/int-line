@@ -11,6 +11,7 @@ const AsideOD = () => {
         <P>Resultado</P>
         <Box>
             <PI>Diagnostico: </PI>
+            
             <PI>Medicacion:</PI>
             <PI>Extra: </PI>
         </Box>

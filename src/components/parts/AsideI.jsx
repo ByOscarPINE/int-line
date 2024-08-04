@@ -5,7 +5,7 @@ const AsideI = () => {
 
     const {InfoDg} = useTasks();
 
-    const Fecha = InfoDg.Fecha.split('T')[0];
+    const Fecha = InfoDg.Fecha.split('T')[0] ? InfoDg.Fecha.split('T')[0] : 'No hay fecha';
 
 
 
@@ -14,7 +14,6 @@ const AsideI = () => {
     let Edad = hoy.getFullYear() - fechaNac.getFullYear();
     const mes = hoy.getMonth() - fechaNac.getMonth();
   
-    // Ajustar si el cumpleaños no ha ocurrido aún este año
     if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
       Edad--;
     }

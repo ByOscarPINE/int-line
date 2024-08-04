@@ -33,9 +33,16 @@ const Div1 = styled.div`
     display: flex;
     gap: 20px;
     align-items: center;
+    border-radius: 10px;
 
     @media (max-width: 768px) {
         height: 80px;    
+    }
+
+    &:hover {
+        background-color: #F2F2F2;
+        transition: 0.3s;
+        transform: scale(1.01);
     }
 `
 

@@ -131,6 +131,8 @@ const Diagnostic = () => {
 //       console.log(descripciones);
 //       console.log(inputs1);
       const response = await inserDiagnostic(combinedObj, id);
+      console.log(combinedObj.descripciones);
+      getDg(combinedObj.descripciones);
 
       if (response.status === 200) {
         getDiag(id);
@@ -184,8 +186,8 @@ const Diagnostic = () => {
             <Div3>
               <P>{"Sintoma(s)"}</P>
                 {inputs1.map((input1, index) => (
-                  <div key={input1.key}>
-                    <Input 
+                  <List key={input1.key}>
+                    <Input2 
                       value={input1.value ? input1.value : input1.descripcion} 
                       onChange={(e) => {handleInputChange1(index, e.target.value);
                       }} 
@@ -193,14 +195,14 @@ const Diagnostic = () => {
                     />
                     <Ul>
                       {activeInput === index && resultadosDeBusqueda.map(paciente => (
-                        <Li key={index}>
-                          <p onClick={() => {
+                        <Li key={index}  onMouseDown={(e) => e.preventDefault()}>
+                          <P1 onClick={() => {
                             handleInputChange1(index, paciente[Search])
-                          }}>{paciente[Search]}</p>
+                          }}>{paciente[Search]}</P1>
                         </Li>
                       ))}
                     </Ul>
-                  </div>
+                  </List>
                 ))}
               <ButtonMS onClick={addInput} srcNS={"/img/create.svg"}></ButtonMS>
             </Div3>
@@ -215,15 +217,62 @@ const Diagnostic = () => {
 
 export default Diagnostic
 
+const P1 = styled.p`
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    color: #828282;
+`
+
+const List = styled.div`
+`
+
 const Ul = styled.ul`
+    display: none;
     position: absolute;
+    padding: 0px;
+    max-width: 170px;
+    z-index: 10;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+    width: 100%;
+    gap: 5px;
+`
+
+const Input = styled.input`
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #E0E0E0;
+    margin-top: 15px;
+
+`
+
+const Input2 = styled.input`
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #E0E0E0;
+    margin-top: 15px;
+
+    &:focus + ${Ul} {
+    display: flex;
+    }
 `
 
 const Li = styled.li`
+    width: calc(100% - 5px);
+    list-style-type: none;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+    background-color: #F9F9F9;
 `
 
 const Div3 = styled.div`
   margin-top:15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 const Aside1 = styled.aside`
@@ -326,7 +375,7 @@ const Form = styled.form`
       width: 90%;
       grid-template-rows: repeat(8, auto);
       grid-auto-flow: row;
-      grid-row-gap: 20px;
+      grid-row-gap: 5px;
     }
 `
 const P = styled.label`
@@ -335,11 +384,4 @@ const P = styled.label`
     font-size: 16px;
     font-family: Inter, sans-serif;
     font-weight: 500;
-`
-
-const Input = styled.input`
-    height: 40px;
-    border-radius: 8px;
-    border: 2px solid #E0E0E0;
-    margin-top: 15px;
 `

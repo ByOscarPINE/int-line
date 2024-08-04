@@ -5,9 +5,7 @@ import { createTaskRequest } from "../api/login.api";
 import { registerPac } from "../api/login.api";
 import { getDiagnostics, getDiagg } from "../api/login.api";
 import { getUser } from "../api/login.api";
-import { setIn } from "formik";
 import { set } from "react-hook-form";
-import { useParams } from "react-router-dom";
 
 export const TaskContext = createContext();
 
@@ -32,6 +30,8 @@ export const TaskContextProvider = ({ children }) => {
   const [Sintomas, setSintomas] = useState([]);
 
   const [DiagID , setDiagID] = useState([]);
+
+  const [Enfermedad , setEnfermedad] = useState([]);
 
 
   const clearDiagnostics = () => {
@@ -137,6 +137,19 @@ export const TaskContextProvider = ({ children }) => {
     }
   }
 
+  const getDiag = async function (data) {
+    try {
+      setDiagnostics([]);
+      const diag = await getDiagnostics(data)
+      setDiagnostics(diag.data[0])
+      setDiagID(diag.data[1][0].ID_Paciente)
+    } catch (error) {
+      console.log(error)
+      setDiagnostics(error)
+      setDiagID('0')
+    }
+  }
+  
 
 
 
@@ -160,23 +173,12 @@ export const TaskContextProvider = ({ children }) => {
   }
 
 
-  const getDiag = async function (data) {
-    try {
-      setDiagnostics([]);
-      const diag = await getDiagnostics(data)
-      setDiagnostics(diag.data[0])
-      setDiagID(diag.data[1][0].ID_Paciente)
-    } catch (error) {
-      console.log(error)
-      setDiagnostics(error)
-      setDiagID('0')
-    }
-  }
 
   const getDg = async function (datos) {
     try {
       console.log(datos)
       const response = await getDiagg(datos);
+      setEnfermedad(response.data)
       console.log(response)
     } catch (error) {
       

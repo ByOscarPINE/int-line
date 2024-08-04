@@ -59,7 +59,7 @@ const ListP = () => {
   return (
     <>
       <NavbarS NS={DatosNS}/>
-      <TopbarS Datos={Diagnostics} Search={"Nombre_Diagnostico"}/>
+      <TopbarS Datos={Diagnostics} Search={"Nombre_Diagnostico"} pageType="ListP"/>
       <Div1>
         <ListC1 InfSeC1={"Diagnostico"}></ListC1>
         {Diagnostics.map((diagnostic, index) => (

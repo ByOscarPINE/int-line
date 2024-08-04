@@ -25,7 +25,7 @@ const ListH = () => {
   return (
     <>
       <NavbarS NS={DatosNS}/>
-      <TopbarS  Datos={Pacientes} Search={"nombres"}/>
+      <TopbarS  Datos={Pacientes} Search={"apellido_paterno"} pageType="ListH"/>
       <Div1>
         <ListC1 ListC1={"Datos"} InfSeC1={"Nombre"}></ListC1>
         {/* Mapea unicamente los componentes line y ListC2 */}
