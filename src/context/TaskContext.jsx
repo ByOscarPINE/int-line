@@ -174,7 +174,7 @@ export const TaskContextProvider = ({ children }) => {
 
 
 
-  const getDg = async function (datos) {
+  const getDg = async function (datos, id) {
     try {
       console.log(datos)
       const response = await getDiagg(datos);

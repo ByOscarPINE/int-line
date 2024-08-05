@@ -132,7 +132,7 @@ const Diagnostic = () => {
 //       console.log(inputs1);
       const response = await inserDiagnostic(combinedObj, id);
       console.log(combinedObj.descripciones);
-      getDg(combinedObj.descripciones);
+      getDg(combinedObj.descripciones, id);
 
       if (response.status === 200) {
         getDiag(id);
