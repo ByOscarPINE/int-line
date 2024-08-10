@@ -6,6 +6,7 @@ import { Link, useParams } from 'react-router-dom'
 import Cookies from 'js-cookie'
 import { jwtDecode } from "jwt-decode";
 import { useNavigate, useLocation } from 'react-router-dom';
+import { set } from 'react-hook-form'
 
 const TopbarS = ({condition, Datos, Search, pageType}) => {
     const {id} = useParams();
@@ -18,15 +19,21 @@ const decodedToken = jwtDecode(token);
 
 const handleChange = event => {
     setConsulta(event.target.value);
-    console.log(consulta)
 };
 
-const resultadosDeBusqueda = consulta
-  ? Datos.filter(paciente =>
-      paciente[Search].toLowerCase().includes(consulta.toLowerCase())
-    )
-  : [];
-
+if(Datos === 0){
+    var resultadosDeBusqueda = []
+}else{
+    if (Datos && Datos === 500) {
+        var resultadosDeBusqueda = []
+    }else {
+        var resultadosDeBusqueda = consulta
+        ? Datos.filter(paciente =>
+            paciente[Search].toLowerCase().includes(consulta.toLowerCase())
+        )
+        : [];
+    }
+}
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -72,7 +79,7 @@ const resultadosDeBusqueda = consulta
         </Div2>
         <Div4>
             <H2>{`¡Bienvenido ${decodedToken.nombre}!`}</H2>
-            <ButtonLD textLD={"Cerrar Sesion"} LDref={"/"}></ButtonLD>
+            <ButtonLD textLD={"Cerrar Sesión"} LDref={"/"}></ButtonLD>
         </Div4>
     </Div1>
   )

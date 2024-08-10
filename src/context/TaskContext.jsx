@@ -137,6 +137,7 @@ export const TaskContextProvider = ({ children }) => {
     }
   }
 
+  //Carga los diagnosticos de un paciente
   const getDiag = async function (data) {
     try {
       setDiagnostics([]);
@@ -174,7 +175,7 @@ export const TaskContextProvider = ({ children }) => {
 
 
 
-  const getDg = async function (datos, id) {
+  const getDg = async function (datos) {
     try {
       console.log(datos)
       const response = await getDiagg(datos);

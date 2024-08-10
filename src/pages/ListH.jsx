@@ -15,7 +15,6 @@ const ListH = () => {
     useEffect (() => {
       try {
         loadPacientes();
-        console.log('Loading Pacientes');
       } catch (error) {
         console.log(error);
       }

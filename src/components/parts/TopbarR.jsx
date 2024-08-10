@@ -39,7 +39,7 @@ const TopbarR = ({condition, TextN}) => {
             <H1>{TextN}</H1>
             <Div3>
               <H2>{`¡Bienvenido ${decodedToken.nombre}!`}</H2>
-              <ButtonLD textLD={"Cerrar Sesion"} LDref={"/"}></ButtonLD>
+              <ButtonLD textLD={"Cerrar Sesión"} LDref={"/"}></ButtonLD>
             </Div3>
         </Div2>
     </Div1>

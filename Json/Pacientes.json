@@ -1,4 +1,0 @@
-[
-    { "IDC2": "1", "NombreC2": "Oscar", "LinkC2": "/ListP", "DatosC2": "Datos", "LinkC22": "/ListP/:id/Res_1"},
-    { "IDC2": "2", "NombreC2": "Carlos", "LinkC2": "/ListP", "otraProp2": "valor6" }
-]

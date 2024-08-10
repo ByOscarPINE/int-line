@@ -13,7 +13,7 @@ import ButtonMS from '../components/buttons/ButtonMS'
 const Diagnostic = () => {
     const {id} = useParams();
     const {Pacientes, inserDiagnostic ,getDiag, validarLetrasYEspacios, validarNumeros, getDg, getSint, Sintomas} = useTasks();
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { isSubmitting } } = useForm();
     const formRef = useRef(null);
 
     useEffect(() => {
@@ -65,14 +65,11 @@ const Diagnostic = () => {
       setConsulta(newValue);
       newInputs[index].descripcion = newValue;
       setInputs1(newInputs);
-      console.log(inputs1);
     };
 
     const [consulta, setConsulta] = useState('');
 
     const Search = "Nombre";
-
-    console.log(Pacientes)
 
     const resultadosDeBusqueda = consulta
   ? Sintomas.filter(paciente =>
@@ -122,9 +119,6 @@ const Diagnostic = () => {
           combinedObj.descripciones.push("Fiebre");
         }
       }
-
-      console.log(combinedObj)
-
 //       console.log(combinedObj)
 
 // // Ahora, descripciones es un array que contiene solo las descripciones de los objetos
@@ -132,7 +126,8 @@ const Diagnostic = () => {
 //       console.log(inputs1);
       const response = await inserDiagnostic(combinedObj, id);
       console.log(combinedObj.descripciones);
-      getDg(combinedObj.descripciones, id);
+      
+      getDg(combinedObj.descripciones);
 
       if (response.status === 200) {
         getDiag(id);
@@ -208,7 +203,7 @@ const Diagnostic = () => {
             </Div3>
           </Aside3>
           <Div2>
-            <Button onClick={handleExternalSubmit}>Diagnosticar</Button>
+            <Button onClick={handleExternalSubmit} disabled={isSubmitting}>{isSubmitting ? "Diagnosticando..." : "Diagnosticar"}</Button>
           </Div2>
         </Div1>
     </>

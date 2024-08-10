@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom'
 const CreateP = () => {
 
     const {registrarPacc, validarLetrasYEspacios, loadPacientes} = useTasks();
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { isSubmitting } } = useForm();
     const navigate = useNavigate();
     
       // registrarPacc(inputs)
@@ -52,7 +52,6 @@ const CreateP = () => {
         <TopbarR TopRL={"/ListH"} TextN={"Crear paciente"}/>
         <Div1>
           <Form onSubmit={handleSubmit(async values => {
-            console.log(values)
             const response = await registrarPacc(values)
             loadPacientes();
             if (response.status === 200) {
@@ -66,7 +65,7 @@ const CreateP = () => {
             <P>Apellido Paterno</P>
             <Input type='text' placeholder='Apellido paterno' {...register('apellido_paterno', {required: true, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios}></Input>
             <P>Apellido Materno</P>
-            <Input type='text' placeholder='Apellido materno' {...register('apellido_materno', {required: true, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios}></Input>
+            <Input type='text' placeholder='Apellido materno' {...register('apellido_materno', {required: false, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios}></Input>
             <P>Fecha de nacimiento</P>
             <Input type='date' {...register('fecha_nacimiento', {required: true})}></Input>
             <P>Estado de nacimiento</P>
@@ -80,7 +79,7 @@ const CreateP = () => {
             <P>Barrio</P>
             <Input type='text' placeholder='Barrio' {...register('barrio', {required: false})} onChange={validarLetrasYEspacios}></Input>
             <Div2>
-              <Button type='submit'>Registrar paciente</Button>
+              <Button type='submit' disabled={isSubmitting}>{isSubmitting ? 'Registrando...' : 'Registrar paciente'}</Button>
             </Div2>
           </Form>
         </Div1>

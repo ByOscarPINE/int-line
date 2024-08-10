@@ -233,6 +233,7 @@ const AsideR = styled.aside`
 const Img = styled.img`
   border-radius: 8px;
   width: 508px;
+  mask-image: linear-gradient(black 95%, transparent 100%);
 `;
 
 export default Login;

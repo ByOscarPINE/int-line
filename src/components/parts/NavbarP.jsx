@@ -14,6 +14,8 @@ const Div1 = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: white;
+  box-shadow: 0px 25px 25px white;
+  z-index: 100;
   }
 `
 const Div2 = styled.div`

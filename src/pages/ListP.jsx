@@ -4,7 +4,6 @@ import TopbarS from '../components/parts/TopbarS'
 import ListC2 from '../components/parts/ListC2'
 import styled, {keyframes} from 'styled-components'
 import ListC1 from '../components/parts/ListC1'
-import Registro from '/Json/Registro.json';
 import { useParams } from 'react-router-dom'
 import { useTasks } from '../context/TaskContext'
 import { useEffect } from 'react';
@@ -35,7 +34,7 @@ const ListP = () => {
   if (Diagnostics.length === 0) {
     return     <>
     <NavbarS NS={DatosNS}/>
-    <TopbarS Datos={Diagnostics} Search={"Nombre_Diagnostico"}/>
+    <TopbarS Datos={500} Search={"Nombre_Diagnostico"}/>
     <Div1>
       <ListC1 InfSeC1={"Diagnostico"}></ListC1>
       <Loader>Cargando...</Loader>
@@ -47,7 +46,7 @@ const ListP = () => {
     return (
       <>
         <NavbarS NS={DatosNS} />
-        <TopbarS Datos={Diagnostics} Search={"Nombre_Diagnostico"} />
+        <TopbarS Datos={Diagnostics.response.status} Search={"Nombre_Diagnostico"} />
         <Div1>
           <ListC1 InfSeC1={"Diagnostico"} />
           <Loader>No se encontraron resultados</Loader>

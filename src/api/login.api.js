@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = 'https://backendint-line-production.up.railway.app'
+const URL = 'http://localhost:4000'
 
 export const loginRequest = async (user) => 
   await axios.post(`${URL}/login`, user);
@@ -33,5 +33,5 @@ export const createTaskRequest = async (task) =>
 export const deleteTaskRequest = async (id) => 
   await axios.delete(`https://backendint-line-production.up.railway.app/tasks/${id}`);
 
-export const getDiagg = async(datos, id) => 
-  await axios.post(`${URL}/enfermedad`, datos, id)
+export const getDiagg = async(datos) => 
+  await axios.post(`${URL}/enfermedad`, datos)

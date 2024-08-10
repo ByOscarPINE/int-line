@@ -58,26 +58,6 @@ const Div1 = styled.div`
     }
 `
 
-// const Div2 = styled.div`
-//     position: relative;
-//     z-index: 1;
-//     display: flex;
-//     flex-direction: column;
-
-//     &::before {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background: gray;
-//     filter: blur(7px);
-//     z-index: -1;
-//     border-radius: 50px;
-//   }
-// `
-
 const AsideL = styled.aside`
     width: 50%;
     display: flex;
@@ -128,5 +108,6 @@ const Img = styled.img`
 
   @media (max-width: 767px) {
     width: calc(100vw - 100px);
+    mask-image: linear-gradient(black 95%, transparent 100%);
   }
 `

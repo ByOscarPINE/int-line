@@ -53,7 +53,7 @@ const H1 = styled.h1`
 
 const Img = styled.img`
     width: 710px;
-    
+    mask-image: linear-gradient(black 95%, transparent 100%);
     @media (max-width: 767px) {
     width: 400px;
     }

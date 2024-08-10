@@ -10,9 +10,10 @@ const AsideOD = () => {
     <Div1>
         <P>Resultado</P>
         <Box>
-            <PI>Diagnostico: </PI>
-            
-            <PI>Medicacion:</PI>
+            <PI>Diagnostico: {InfoDg.Enfermedad}</PI>
+            <PI>Medicacion: {InfoDg.Tratamiento.map((Tratamiento, index) => (
+                <PI key={index}>{Tratamiento.Nombre}:<br></br>{Tratamiento.Descripcion}</PI>
+            ))}</PI>
             <PI>Extra: </PI>
         </Box>
     </Div1>
@@ -23,6 +24,7 @@ export default AsideOD
 
 const Div1 = styled.div`
     width: 100%;
+    margin-top: 0px;
     text-align: left;
     border-radius: 8px;
 `
