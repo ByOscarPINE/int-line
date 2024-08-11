@@ -45,7 +45,7 @@ const Diagnostic = () => {
       obesidad: false,
       neumonia: false,
       asma: false,
-      artitris: false,
+      atritis: false,
       gota: false,
       epilepsia: false,
       hipertension: false
@@ -119,7 +119,49 @@ const Diagnostic = () => {
           combinedObj.descripciones.push("Fiebre");
         }
       }
-//       console.log(combinedObj)
+
+      if(values.neumonia === true){
+        if(combinedObj.descripciones.includes("Neumonia") || combinedObj.descripciones.includes("neumonía")){         
+        }
+        else{
+          combinedObj.descripciones.push("Neumonia");
+        }
+      }
+
+      // if (values.presion > 140 || values.presion < 90) {
+      //   if(combinedObj.descripciones.includes("Hipertensión") || combinedObj.descripciones.includes("hipertensión")){         
+      //   }
+      //   else{
+      //     combinedObj.descripciones.push("Hipertensión");
+      //   }
+
+
+      // if (values.pulso > 100 || values.pulso < 60) {
+      //   if(combinedObj.descripciones.includes("Taquicardia") || combinedObj.descripciones.includes("taquicardia")){         
+      //   }
+      //   else{
+      //     combinedObj.descripciones.push("Taquicardia");
+      //   }
+      // }
+
+      // if (values.peso > 100) {
+      //   if(combinedObj.descripciones.includes("Obesidad") || combinedObj.descripciones.includes("obesidad")){         
+      //   }
+      //   else{
+      //     combinedObj.obesidad = true;
+      //     combinedObj.descripciones.push("Obesidad");
+      //   }
+      // }
+
+      // if (values.peso < 50) {
+      //   if(combinedObj.descripciones.includes("Bajo peso") || combinedObj.descripciones.includes("bajo peso")){         
+      //   }
+      //   else{
+      //     combinedObj.descripciones.push("Bajo peso");
+      //   }
+      // }
+      
+//     console.log(combinedObj)
 
 // // Ahora, descripciones es un array que contiene solo las descripciones de los objetos
 //       console.log(descripciones);
@@ -139,6 +181,15 @@ const Diagnostic = () => {
       console.log(response);
       // registrarPacc(combinedObj);
       // getDg(inputs1);
+    };
+
+    const validarPresionArterial = (event) => {
+      const value = event.target.value;
+      const regex = /^[0-9]+\s*\/\s*[0-9]+$/;
+      if (!regex.test(value)) {
+        // Manejar el error de validación
+        console.error("Formato inválido. Use el formato '23 / 45'.");
+      }
     };
   
   return (
@@ -160,21 +211,21 @@ const Diagnostic = () => {
           <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}
             >
               <P>Presión arterial</P>
-              <Input type='text' placeholder='Presión arterial' {...register('presion', {required: false, pattern: /^[0-9.\s]+$/})} onChange={validarNumeros}></Input>
+              <Input type='text' placeholder='Presión arterial'   {...register('presion', { required: false, pattern: /^[0-9]+\s*\/\s*[0-9]+$/ })}  onChange={validarPresionArterial}></Input>
               <P>Pulso</P>
               <Input type='text' placeholder='Pulso' {...register('pulso', {required: false, pattern: /^[0-9.\s]+$/})} onChange={validarNumeros} ></Input>
               <P>Alergias</P>
               <Input type='text' placeholder='Alergias' {...register('alergias', {required: false, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios}></Input>
               <P>Antecedentes</P>
-              <Input type='text' placeholder='Antecedentes' {...register('antecedentes', {required: false, pattern: /^[0-9.\s]+$/})} onChange={validarNumeros}></Input>
+              <Input type='text' placeholder='Antecedentes' {...register('antecedentes', {required: false, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios}></Input>
               <P>Otros</P>
               <Input type='text' placeholder='Otros' {...register('otros', {required: false, pattern: /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜ.\s]+$/})} onChange={validarLetrasYEspacios} ></Input>
               <P>Peso</P>
-              <Input type='text' placeholder='Peso' {...register('peso', {required: false, pattern: /^[0-9.]+$/})} onChange={validarNumeros} ></Input>
+              <Input type='text' placeholder='Peso (kg)' {...register('peso', {required: false, pattern: /^[0-9.]+$/})} onChange={validarNumeros} ></Input>
               <P>Estatura</P>
-              <Input type='text' placeholder='Estatura' {...register('estatura', {required: false, pattern: /^[0-9\s]+$/})} onChange={validarNumeros} ></Input>
+              <Input type='text' placeholder='Estatura (cm)' {...register('estatura', {required: false, pattern: /^[0-9\s]+$/})} onChange={validarNumeros} ></Input>
               <P>Temperatura</P>
-              <Input type='text' placeholder='Temperatura' {...register('temperatura', {required: false, pattern: /^[0-9.]+$/})} onChange={validarNumeros} ></Input>
+              <Input type='text' placeholder='Temperatura ' {...register('temperatura', {required: false, pattern: /^[0-9.]+$/})} onChange={validarNumeros} ></Input>
             </Form>
           </Aside2>
           <Aside3>
@@ -189,8 +240,8 @@ const Diagnostic = () => {
                       onFocus={() => setActiveInput(index)}
                     />
                     <Ul>
-                      {activeInput === index && resultadosDeBusqueda.map(paciente => (
-                        <Li key={index}  onMouseDown={(e) => e.preventDefault()}>
+                      {activeInput === index && resultadosDeBusqueda.map((paciente, index1) => (
+                        <Li key={index1}  onMouseDown={(e) => e.preventDefault()}>
                           <P1 onClick={() => {
                             handleInputChange1(index, paciente[Search])
                           }}>{paciente[Search]}</P1>

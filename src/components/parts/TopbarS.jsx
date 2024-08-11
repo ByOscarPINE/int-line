@@ -74,7 +74,7 @@ if(Datos === 0){
                     ))}
                     </Ul>
                 </List>
-                <ButtonF><Img src='/img/FiltroImg.png'/><P>Filtro</P></ButtonF>
+                {/* <ButtonF><Img src='/img/FiltroImg.png'/><P>Filtro</P></ButtonF> */}
             </Div3>
         </Div2>
         <Div4>
