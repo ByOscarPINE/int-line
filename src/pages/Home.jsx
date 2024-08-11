@@ -85,12 +85,12 @@ const Home = () => {
             <HomeD></HomeD>
         </Div4>
         <Div5>
-            <HomeF text="“La tecnología en las manos correctas logra
+        <HomeF text="“La tecnología en las manos correctas logra
                 resultados increíbles.”" text1="Oscar S." text2="Desarrollador"></HomeF>
-            <HomeF text="“Teníamos una meta clara y no paramos hasta cumplirla”."
-                text1="Guillermo G." text2="Disenador"></HomeF>
-            <HomeF text="“Como sociedad debemos apoyarnos, ese siempre lo tuvimos en mente“."
-                text1="Alexis R." text2="Lider"></HomeF>
+            <HomeF text="“Teníamos una meta clara y no paramos hasta cumplirla.”"
+                text1="Guillermo G." text2="Diseñador"></HomeF>
+            <HomeF text="“Como sociedad debemos apoyarnos, eso siempre lo tuvimos en mente.”"
+                text1="Alexis R." text2="Líder"></HomeF>
         </Div5>  
     </Div1>
     <Footer />
@@ -101,7 +101,7 @@ const Home = () => {
 export default Home
 
 const DatosPM = [
-    { toPM: '/', srcPM: '/img/homepm.svg'},
+    { toPM: '/', srcPM: '/img/home.svg'},
     { toPM: '/about', srcPM: '/img/create.svg'},
-    { toPM: '/login', srcPM: '/img/profile.svg'},
+    { toPM: '/login', srcPM: '/img/user_icon_m.png'},
   ]

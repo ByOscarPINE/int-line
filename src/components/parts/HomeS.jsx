@@ -67,7 +67,7 @@ const HomeS = () => {
             <Img src='./img/HomeI.svg'></Img>
         </Aside1>
         <Aside2>
-            <H1>UN EVALUADOR MEDICO HECHO PARA PERSONAL MEDICO CON EL OBJETIVO DE 
+            <H1>UN EVALUADOR MÉDICO HECHO PARA PERSONAL MÉDICO CON EL OBJETIVO DE 
             QUE TODOS GOZEMOS DE BUENA SALUD.</H1>
         </Aside2>
         <Aside3>

@@ -42,9 +42,9 @@ const About = () => {
 export default About
 
 const DatosPM = [
-  { toPM: '/', srcPM: '/img/homepm.svg'},
+  { toPM: '/', srcPM: '/img/home.svg'},
   { toPM: '/about', srcPM: '/img/create.svg'},
-  { toPM: '/login', srcPM: '/img/profile.svg'},
+  { toPM: '/login', srcPM: '/img/user_icon_m.png'},
 ]
 
 const Div1 = styled.div`

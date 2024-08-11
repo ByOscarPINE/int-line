@@ -12,10 +12,16 @@ const Div = styled.div`
     justify-content: center;
     align-items: center;
     gap: calc(100% / 3);
+    z-index: 100;
 
     @media (min-width: 768px) {
         display: none;
     }
+`
+
+const Img = styled.img`
+  width: 20px;
+  height: 22px;
 `
 
 const NavbarPM = ({DatosPM}) => {
@@ -23,8 +29,8 @@ const NavbarPM = ({DatosPM}) => {
     <Div>
         {DatosPM.map((item, index) => (
             <Link key={index} to={item.toPM} >
-            <img src={item.srcPM}>
-            </img>
+            <Img src={item.srcPM}>
+            </Img>
             </Link>
         ))}
     </Div>

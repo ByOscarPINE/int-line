@@ -25,7 +25,7 @@ const NavbarS = ({NS}) => {
     <D>
       <Boxside>
         <Div11>
-          <Button onClick={toggleSidenav}>-</Button>
+          <Button onClick={toggleSidenav}><Img4 src='\img\align_justify_icon.png'></Img4></Button>
         </Div11>
         <Div12>
           <Img2 src='/img/Logo.png'></Img2>
@@ -58,6 +58,11 @@ const NavbarS = ({NS}) => {
 }
 
 export default NavbarS
+
+const Img4 = styled.img`
+    width: 20px;
+    height: 22px;
+`
 
 const Div11 = styled.div`
   width: 33%;
@@ -153,6 +158,9 @@ const Button = styled.button`
   border-radius: 4px;
   cursor: pointer;
   margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Boxside = styled.div`
