@@ -183,12 +183,14 @@ const Diagnostic = () => {
       // getDg(inputs1);
     };
 
+    const [fpa, setFpa] = useState(false);
     const validarPresionArterial = (event) => {
       const value = event.target.value;
       const regex = /^[0-9]+\s*\/\s*[0-9]+$/;
       if (!regex.test(value)) {
         // Manejar el error de validación
         console.error("Formato inválido. Use el formato '23 / 45'.");
+        setFpa(true);
       }
     };
   
@@ -268,6 +270,7 @@ const P1 = styled.p`
     font-family: Inter, sans-serif;
     font-weight: 400;
     color: #828282;
+    cursor: pointer;
 `
 
 const List = styled.div`
