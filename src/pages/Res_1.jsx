@@ -239,7 +239,7 @@ const Res_1 = () => {
   
 
     const DatosNS = [
-        { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg'},
+        { toNS: '/ListH', TextNS: 'Inicio', srcNS: '/img/home.svg'},
         { toNS: `/ListP/${id}`, TextNS: 'Buscar', srcNS: '/img/search.svg'},
         { toNS: `/ListP/${id}/${idd}`, TextNS: 'Diagnostico', srcNS: '/img/create.svg', backgroundColor: '#F2F2F2'},
     ]
@@ -251,7 +251,9 @@ const Res_1 = () => {
       <TopbarR condition={{pathname: `/ListP/${id}` }} TextN={'Diagnostico '}/>
       <Div1>
         <Box>
-          <p>cargando.....</p>
+          <Div2>
+            <PI>cargando.....</PI>
+          </Div2>
         </Box>
       </Div1>
     </>
@@ -287,6 +289,10 @@ const Div1 = styled.div`
       }
 `
 
+const Div2 = styled.div`
+    text-align: center;
+`
+
 const Box = styled.div`
     display: flex;
     gap: 24px;
@@ -307,10 +313,20 @@ const DownloadButton = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  
   &:hover {
-    background-color: #0056b3;
+    transition: 0.5s;
+    background-color: gray;
   }
 
   @media (max-width: 768px) {
   }
 `;
+
+const PI = styled.p`
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    margin: 24px;
+    color: #828282;
+`

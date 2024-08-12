@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ButtonB from '../buttons/ButtonB.jsx'
 import { useLocation } from 'react-router-dom'
 import ButtonLD from '../buttons/ButtonLD.jsx'
+import { Link } from 'react-router-dom'
 
 const Div1 = styled.div`
 
@@ -88,12 +89,12 @@ const NavbarP = () => {
 
   return (
     <Div1>
-      <Img1 src='./img/Logo-I.svg'></Img1>
+      <Img1 loading='lazy' src='./img/Logo-I.svg'></Img1>
       <Div2>
         <H1>LIFELINE</H1>
       </Div2>
       <Div3>
-        <Img src='./img/Logo.png' alt='img'/>
+        <Link to={'/'}><Img loading='lazy' src='./img/Logo.png' alt='img'/></Link>
       </Div3>
       <Div4>
           <ButtonB textB={"Menu Principal"} Bref={"/"} currentPath={location.pathname} />

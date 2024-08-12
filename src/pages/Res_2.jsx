@@ -24,7 +24,7 @@ const Res_2 = () => {
 
 
     const DatosNS = [
-        { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg'},
+        { toNS: '/ListH', TextNS: 'Inicio', srcNS: '/img/home.svg'},
         { toNS: `/ListH/${id}/Res_2`, TextNS: 'Datos', srcNS: '/img/create.svg', backgroundColor: '#F2F2F2'},
     ]
 

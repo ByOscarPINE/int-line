@@ -34,7 +34,7 @@ const TopbarR = ({condition, TextN}) => {
     <Div1>
         <Div2>
         <StyledLink to={condition ? `/ListP/${id}` : "#"} onClick={condition ? undefined : handleGoBack}>
-        <Img src='/img/Back.svg' alt='Back'/>
+        <Img loading='lazy' src='/img/Back.svg' alt='Back'/>
       </StyledLink>
             <H1>{TextN}</H1>
             <Div3>

@@ -83,12 +83,6 @@ const Diagnostic = () => {
       }
     };
 
-    // const onClick = () => {
-    //   console.log(inputs1);
-    //   diagnosticarEnfermedad();
-    //   getDg(inputs1);
-    // }
-
     const handleExternalSubmit = () => {
       formRef.current.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
     };
@@ -161,11 +155,6 @@ const Diagnostic = () => {
       //   }
       // }
       
-//     console.log(combinedObj)
-
-// // Ahora, descripciones es un array que contiene solo las descripciones de los objetos
-//       console.log(descripciones);
-//       console.log(inputs1);
       const response = await inserDiagnostic(combinedObj, id);
 
       if (response.status === 200) {
@@ -173,11 +162,7 @@ const Diagnostic = () => {
         navigate(`/ListP/${id}/${response.data}`);
       } else {
         alert("Error al diagnosticar al paciente");
-      }  
-
-      console.log(response);
-      // registrarPacc(combinedObj);
-      // getDg(inputs1);
+      }
     };
 
     const [fpa, setFpa] = useState(false);
@@ -210,7 +195,7 @@ const Diagnostic = () => {
           <Form ref={formRef} onSubmit={handleSubmit(onSubmit)}
             >
               <P>Presión arterial</P>
-              <Input type='text' placeholder='Presión arterial'   {...register('presion', { required: false, pattern: /^[0-9]+\s*\/\s*[0-9]+$/ })}  onChange={validarPresionArterial}></Input>
+              <Input type='text' placeholder='120/80 mmHg'   {...register('presion', { required: false, pattern: /^[0-9]+\s*\/\s*[0-9]+$/ })}  onChange={validarPresionArterial}></Input>
               <P>Pulso</P>
               <Input type='text' placeholder='Pulso' {...register('pulso', {required: false, pattern: /^[0-9.\s]+$/})} onChange={validarNumeros} ></Input>
               <P>Alergias</P>

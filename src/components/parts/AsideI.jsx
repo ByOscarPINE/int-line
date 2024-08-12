@@ -7,8 +7,6 @@ const AsideI = () => {
 
     const Fecha = InfoDg.Fecha.split('T')[0] ? InfoDg.Fecha.split('T')[0] : 'No hay fecha';
 
-
-
     const hoy = new Date();
     const fechaNac = new Date(InfoDg.fecha_nacimiento);
     let Edad = hoy.getFullYear() - fechaNac.getFullYear();
@@ -22,8 +20,6 @@ const AsideI = () => {
         <P>Paciente</P>
         <Box>
             <PI>Nombre(s): {InfoDg.nombres} {InfoDg.apellido_paterno} {InfoDg.apellido_materno}</PI>
-            {/* <PI>Apellido Paterno: {InfoDg.apellido_paterno}</PI>
-            <PI>Apellido Materno: {InfoDg.apellido_materno}</PI> */}
             <PI>Fecha de consulta: {Fecha}</PI>
             <PI>Edad: {Edad} años </PI>
             <PI>Peso: {InfoDg.Peso} kg</PI>

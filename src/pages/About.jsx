@@ -32,7 +32,7 @@ const About = () => {
           </P>
           {/* </Div2> */}
         </AsideL>
-        <AsideR><Img src='/img/AboutImg.svg'></Img></AsideR>
+        <AsideR><Img loading='lazy' src='/img/AboutImg.svg'></Img></AsideR>
     </Div1>
     <Footer />
     </>

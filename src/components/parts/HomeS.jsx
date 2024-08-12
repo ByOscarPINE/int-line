@@ -64,14 +64,14 @@ const HomeS = () => {
   return (
     <Div1>
         <Aside1>
-            <Img src='./img/HomeI.svg'></Img>
+            <Img loading='lazy' src='./img/HomeI.svg'></Img>
         </Aside1>
         <Aside2>
             <H1>UN EVALUADOR MÉDICO HECHO PARA PERSONAL MÉDICO CON EL OBJETIVO DE 
             QUE TODOS GOZEMOS DE BUENA SALUD.</H1>
         </Aside2>
         <Aside3>
-            <Img src='./img/HomeI.svg'></Img>
+            <Img loading='lazy' src='./img/HomeI.svg'></Img>
         </Aside3>
     </Div1>
   )

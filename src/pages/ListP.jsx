@@ -2,7 +2,7 @@ import React from 'react'
 import NavbarS from '../components/parts/NavbarS'
 import TopbarS from '../components/parts/TopbarS'
 import ListC2 from '../components/parts/ListC2'
-import styled, {keyframes} from 'styled-components'
+import styled from 'styled-components'
 import ListC1 from '../components/parts/ListC1'
 import { useParams } from 'react-router-dom'
 import { useTasks } from '../context/TaskContext'
@@ -26,7 +26,7 @@ const ListP = () => {
   }
 
   const DatosNS = [
-    { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg'},
+    { toNS: '/ListH', TextNS: 'Inicio', srcNS: '/img/home.svg'},
     { toNS: `/ListP/${id}`, TextNS: 'Buscar', srcNS: '/img/search.svg', backgroundColor: '#F2F2F2'},
     { toNS: `/ListP/${id}/Diagnostic`, TextNS: 'Diagnosticar', srcNS: '/img/create.svg'},
   ]
@@ -37,7 +37,7 @@ const ListP = () => {
     <TopbarS Datos={500} Search={"Nombre_Diagnostico"}/>
     <Div1>
       <ListC1 InfSeC1={"Diagnostico"}></ListC1>
-      <Loader>Cargando...</Loader>
+      <PI>Cargando...</PI>
     </Div1>
   </>
   }
@@ -49,7 +49,7 @@ const ListP = () => {
         <TopbarS Datos={Diagnostics.response.status} Search={"Nombre_Diagnostico"} />
         <Div1>
           <ListC1 InfSeC1={"Diagnostico"} />
-          <Loader>No se encontraron resultados</Loader>
+          <PI>No se encontraron resultados</PI>
         </Div1>
       </>
     );
@@ -97,25 +97,13 @@ const Line = styled.div`
     height: 2px;
 `;
 
-const matrix = keyframes`
-  0% {
-    background-position: 0% 100%, 50% 100%, 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%, 50% 0%, 100% 0%;
-  }
-`;
-
-const Loader = styled.div`
-  width: 45px;
-  height: 40px;
-  background: linear-gradient(#0000 calc(1*100%/6),#fff 0 calc(3*100%/6),#0000 0),
-              linear-gradient(#0000 calc(2*100%/6),#fff 0 calc(4*100%/6),#0000 0),
-              linear-gradient(#0000 calc(3*100%/6),#fff 0 calc(5*100%/6),#0000 0);
-  background-size: 10px 400%;
-  background-repeat: no-repeat;
-  animation: ${matrix} 1s infinite linear;
-`;
+const PI = styled.p`
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    margin: 24px;
+    color: #828282;
+`
 
 
 export default ListP

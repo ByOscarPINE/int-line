@@ -7,7 +7,7 @@ const AsideO = () => {
     const { DatosP} = useTasks();
   return (
     <Div1>
-        <P>Output</P>
+        <P>Datos del paciente</P>
         <Box>
             <PI>Nombre(s): {DatosP.nombres}</PI>
             <PI>Apellido Paterno: {DatosP.apellido_paterno}</PI>

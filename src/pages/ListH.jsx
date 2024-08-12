@@ -65,8 +65,8 @@ const Line = styled.div`
 `;
 
 const DatosNS = [
-  { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg', backgroundColor: '#F2F2F2'},
-  { toNS: '/CreateP', TextNS: 'Crear', srcNS: '/img/create.svg'},
+  { toNS: '/ListH', TextNS: 'Inicio', srcNS: '/img/home.svg', backgroundColor: '#F2F2F2'},
+  { toNS: '/CreateP', TextNS: 'Agregar', srcNS: '/img/create.svg'},
 ]
 
 export default ListH

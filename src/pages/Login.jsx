@@ -102,7 +102,7 @@ const Login = () => {
           </Div2>
         </AsideL>
         <AsideR>
-          <Img src="/img/LoginImg.svg"></Img>
+          <Img loading='lazy' src="/img/LoginImg.svg"></Img>
         </AsideR>
       </Div1>
       <Footer />

@@ -27,7 +27,7 @@ const P1 = styled.p`
 const HomeD = () => {
   return (
     <Div1>
-        <H1>Developers</H1>
+        <H1>Team</H1>
         <P1>“El futuro complementado con la salud”</P1>
     </Div1>
   )

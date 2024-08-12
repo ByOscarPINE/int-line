@@ -25,10 +25,10 @@ const NavbarS = ({NS}) => {
     <D>
       <Boxside>
         <Div11>
-          <Button onClick={toggleSidenav}><Img4 src='\img\align_justify_icon.png'></Img4></Button>
+          <Button onClick={toggleSidenav}><Img4 loading='lazy' src='\img\align_justify_icon.png'></Img4></Button>
         </Div11>
         <Div12>
-          <Img2 src='/img/Logo.png'></Img2>
+          <Img2 loading='lazy' src='/img/Logo.png'></Img2>
         </Div12>
         <Div13>
           <ButtonSC onClick={onButtonClick}>Cerrar Sesion</ButtonSC>
@@ -39,7 +39,7 @@ const NavbarS = ({NS}) => {
         <Line/>
         <Div2>
             <H1>LIFELINE</H1>
-            <Img src='/img/Logo.png'></Img>
+            <Img loading='lazy' src='/img/Logo.png'></Img>
         </Div2>
         <Div3>
         {NS.map((item, index) => (

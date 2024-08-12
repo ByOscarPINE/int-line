@@ -29,7 +29,7 @@ const NavbarPM = ({DatosPM}) => {
     <Div>
         {DatosPM.map((item, index) => (
             <Link key={index} to={item.toPM} >
-            <Img src={item.srcPM}>
+            <Img loading='lazy' src={item.srcPM}>
             </Img>
             </Link>
         ))}

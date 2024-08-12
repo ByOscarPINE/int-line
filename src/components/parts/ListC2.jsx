@@ -22,7 +22,7 @@ const ListC2 = ({data, LinkC2, LinkC22, Datos, idd}) => {
         <StyledLink to={LinkC2}><H1>{data.Nombre_Diagnostico}{data.nombres} {data.apellido_paterno} {data.apellido_materno}</H1></StyledLink>
         <StyledLink to={LinkC22}><P2>{Datos}</P2></StyledLink>
         <H3>{fecha}</H3>
-        <Div2><Button onClick={() => deleteTask(data.id_paciente)}><Img src='/img/more-horizontal.svg'></Img></Button></Div2>
+        {/* <Div2><Button onClick={() => deleteTask(data.id_paciente)}><Img src='/img/more-horizontal.svg'></Img></Button></Div2> */}
     </Div1>  
   )
 }

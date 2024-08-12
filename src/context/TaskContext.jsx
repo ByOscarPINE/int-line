@@ -68,7 +68,6 @@ export const TaskContextProvider = ({ children }) => {
 
   const login = async (user) => {
     try {
-      console.log(user)
       const response = await loginRequest(user);
       const { token } = response.data;
       localStorage.setItem('token', token); // Guarda el token en localStorage
@@ -99,7 +98,6 @@ export const TaskContextProvider = ({ children }) => {
 
   const inserDiagnostic = async (data, id) => {
     try {
-      console.log(data, id)
       const response = await insertDiag(data, id);
       return response;
     } catch (error) {
@@ -123,7 +121,7 @@ export const TaskContextProvider = ({ children }) => {
       setInfoDg([]);
       const response = await getInfoDg(idpa, iddi);
       setInfoDg(response.data)
-      
+
     } catch (error) {
       console.log(error)
     }

@@ -50,7 +50,7 @@ if(Datos === 0){
   return (
     <Div1>
         <Link to={condition ? `/ListP/${id}` : "#"} onClick={condition ? undefined : handleGoBack}>
-            <Img1 src='/img/Back.svg'/>
+            <Img1 loading='lazy' src='/img/Back.svg'/>
         </Link>
         <Div2>
             <H1>Buscador</H1>

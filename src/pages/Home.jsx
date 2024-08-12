@@ -85,12 +85,10 @@ const Home = () => {
             <HomeD></HomeD>
         </Div4>
         <Div5>
-        <HomeF text="“La tecnología en las manos correctas logra
-                resultados increíbles.”" text1="Oscar S." text2="Desarrollador"></HomeF>
-            <HomeF text="“Teníamos una meta clara y no paramos hasta cumplirla.”"
-                text1="Guillermo G." text2="Diseñador"></HomeF>
-            <HomeF text="“Como sociedad debemos apoyarnos, eso siempre lo tuvimos en mente.”"
-                text1="Alexis R." text2="Líder"></HomeF>
+            <HomeF text="“La tecnología en las manos adecuadas puede transformar el mundo.”" text1="Oscar S." text2="Desarrollador"></HomeF>
+            <HomeF text="“Nos propusimos una meta y trabajamos incansablemente hasta alcanzarla.”" text1="Guillermo G." text2="Diseñador"></HomeF>
+            <HomeF text="“El apoyo mutuo es fundamental para el progreso de la sociedad.”" text1="Alexis R." text2="Líder"></HomeF>
+            <HomeF text="“El trabajo en equipo y la colaboración son clave para el éxito.”" text1="Kevin R." text2="Base de datos"></HomeF>
         </Div5>  
     </Div1>
     <Footer />
