@@ -62,6 +62,7 @@ const Div5 = styled.div`
     width: 80%;
     max-width: 80%;
     height: 252px;
+    
 
     @media (max-width: 767px) {
     display: none;
@@ -74,7 +75,7 @@ const Home = () => {
         dots: true,
         infinite: false,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 2,
       };
 

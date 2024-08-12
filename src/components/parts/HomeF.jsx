@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Div1 = styled.div`
 
-    width: 405.33px;
+    width: 500px;
     height: 252px;
     justify-content: center;
     align-items: center;
