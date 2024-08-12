@@ -1,0 +1,60 @@
+"filename", "language", "JSON", "JavaScript", "XML", "Markdown", "JavaScript JSX", "CSS", "HTML", "comment", "blank", "total"
+"c:\Users\SKL\Desktop\Integradora\int-line\.eslintrc.cjs", "JavaScript", 0, 21, 0, 0, 0, 0, 0, 0, 1, 22
+"c:\Users\SKL\Desktop\Integradora\int-line\README.md", "Markdown", 0, 0, 0, 5, 0, 0, 0, 0, 4, 9
+"c:\Users\SKL\Desktop\Integradora\int-line\index.html", "HTML", 0, 0, 0, 0, 0, 0, 16, 1, 1, 18
+"c:\Users\SKL\Desktop\Integradora\int-line\package-lock.json", "JSON", 10737, 0, 0, 0, 0, 0, 0, 0, 1, 10738
+"c:\Users\SKL\Desktop\Integradora\int-line\package.json", "JSON", 44, 0, 0, 0, 0, 0, 0, 0, 1, 45
+"c:\Users\SKL\Desktop\Integradora\int-line\public\img\AboutImg.svg", "XML", 0, 0, 14, 0, 0, 0, 0, 0, 1, 15
+"c:\Users\SKL\Desktop\Integradora\int-line\public\img\Back.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\SKL\Desktop\Integradora\int-line\public\img\HomeI.svg", "XML", 0, 0, 19, 0, 0, 0, 0, 0, 1, 20
+"c:\Users\SKL\Desktop\Integradora\int-line\public\img\LoginImg.svg", "XML", 0, 0, 20, 0, 0, 0, 0, 0, 1, 21
+"c:\Users\SKL\Desktop\Integradora\int-line\public\img\Logo-I.svg", "XML", 0, 0, 9, 0, 0, 0, 0, 0, 1, 10
+"c:\Users\SKL\Desktop\Integradora\int-line\public\img\create.svg", "XML", 0, 0, 5, 0, 0, 0, 0, 0, 1, 6
+"c:\Users\SKL\Desktop\Integradora\int-line\public\img\home.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 0, 1, 5
+"c:\Users\SKL\Desktop\Integradora\int-line\public\img\homepm.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\SKL\Desktop\Integradora\int-line\public\img\more-horizontal.svg", "XML", 0, 0, 5, 0, 0, 0, 0, 0, 1, 6
+"c:\Users\SKL\Desktop\Integradora\int-line\public\img\profile.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\SKL\Desktop\Integradora\int-line\public\img\search.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 0, 1, 5
+"c:\Users\SKL\Desktop\Integradora\int-line\src\App.css", "CSS", 0, 0, 0, 0, 0, 5, 0, 0, 1, 6
+"c:\Users\SKL\Desktop\Integradora\int-line\src\App.jsx", "JavaScript JSX", 0, 0, 0, 0, 35, 0, 0, 0, 4, 39
+"c:\Users\SKL\Desktop\Integradora\int-line\src\api\login.api.js", "JavaScript", 0, 24, 0, 0, 0, 0, 0, 1, 15, 40
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\buttons\ButtonB.jsx", "JavaScript JSX", 0, 0, 0, 0, 41, 0, 0, 0, 4, 45
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\buttons\ButtonFo.jsx", "JavaScript JSX", 0, 0, 0, 0, 21, 0, 0, 0, 4, 25
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\buttons\ButtonLD.jsx", "JavaScript JSX", 0, 0, 0, 0, 43, 0, 0, 0, 7, 50
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\buttons\ButtonMS.jsx", "JavaScript JSX", 0, 0, 0, 0, 35, 0, 0, 0, 5, 40
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\buttons\ButtonNS.jsx", "JavaScript JSX", 0, 0, 0, 0, 45, 0, 0, 0, 6, 51
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\inputs\Input.jsx", "JavaScript JSX", 0, 0, 0, 0, 10, 0, 0, 0, 2, 12
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\inputs\Input1.jsx", "JavaScript JSX", 0, 0, 0, 0, 25, 0, 0, 0, 5, 30
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\AsideI.jsx", "JavaScript JSX", 0, 0, 0, 0, 213, 0, 0, 2, 15, 230
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\AsideO.jsx", "JavaScript JSX", 0, 0, 0, 0, 47, 0, 0, 0, 7, 54
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\AsideOD.jsx", "JavaScript JSX", 0, 0, 0, 0, 44, 0, 0, 0, 8, 52
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\Footer.jsx", "JavaScript JSX", 0, 0, 0, 0, 80, 0, 0, 0, 11, 91
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\HomeD.jsx", "JavaScript JSX", 0, 0, 0, 0, 31, 0, 0, 0, 5, 36
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\HomeF.jsx", "JavaScript JSX", 0, 0, 0, 0, 84, 0, 0, 0, 9, 93
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\HomeP.jsx", "JavaScript JSX", 0, 0, 0, 0, 32, 0, 0, 0, 4, 36
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\HomeS.jsx", "JavaScript JSX", 0, 0, 0, 0, 71, 0, 0, 0, 9, 80
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\Inp1.jsx", "JavaScript JSX", 0, 0, 0, 0, 29, 0, 0, 0, 6, 35
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\Inp2.jsx", "JavaScript JSX", 0, 0, 0, 0, 94, 0, 0, 7, 19, 120
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\ListC1.jsx", "JavaScript JSX", 0, 0, 0, 0, 60, 0, 0, 0, 10, 70
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\ListC2.jsx", "JavaScript JSX", 0, 0, 0, 0, 98, 0, 0, 0, 18, 116
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\NavbarP.jsx", "JavaScript JSX", 0, 0, 0, 0, 99, 0, 0, 0, 8, 107
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\NavbarPM.jsx", "JavaScript JSX", 0, 0, 0, 0, 36, 0, 0, 0, 4, 40
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\NavbarS.jsx", "JavaScript JSX", 0, 0, 0, 0, 178, 0, 0, 0, 25, 203
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\TopbarR.jsx", "JavaScript JSX", 0, 0, 0, 0, 101, 0, 0, 0, 17, 118
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\parts\TopbarS.jsx", "JavaScript JSX", 0, 0, 0, 0, 223, 0, 0, 1, 24, 248
+"c:\Users\SKL\Desktop\Integradora\int-line\src\components\switches\Switch.jsx", "JavaScript JSX", 0, 0, 0, 0, 81, 0, 0, 3, 9, 93
+"c:\Users\SKL\Desktop\Integradora\int-line\src\context\TaskContext.jsx", "JavaScript JSX", 0, 0, 0, 0, 152, 0, 0, 8, 35, 195
+"c:\Users\SKL\Desktop\Integradora\int-line\src\index.css", "CSS", 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\SKL\Desktop\Integradora\int-line\src\main.jsx", "JavaScript JSX", 0, 0, 0, 0, 9, 0, 0, 0, 2, 11
+"c:\Users\SKL\Desktop\Integradora\int-line\src\pages\About.jsx", "JavaScript JSX", 0, 0, 0, 0, 102, 0, 0, 2, 9, 113
+"c:\Users\SKL\Desktop\Integradora\int-line\src\pages\CreateP.jsx", "JavaScript JSX", 0, 0, 0, 0, 127, 0, 0, 25, 18, 170
+"c:\Users\SKL\Desktop\Integradora\int-line\src\pages\Diagnostic.jsx", "JavaScript JSX", 0, 0, 0, 0, 342, 0, 0, 43, 48, 433
+"c:\Users\SKL\Desktop\Integradora\int-line\src\pages\Home.jsx", "JavaScript JSX", 0, 0, 0, 0, 98, 0, 0, 0, 9, 107
+"c:\Users\SKL\Desktop\Integradora\int-line\src\pages\ListH.jsx", "JavaScript JSX", 0, 0, 0, 0, 63, 0, 0, 1, 8, 72
+"c:\Users\SKL\Desktop\Integradora\int-line\src\pages\ListP.jsx", "JavaScript JSX", 0, 0, 0, 0, 106, 0, 0, 1, 14, 121
+"c:\Users\SKL\Desktop\Integradora\int-line\src\pages\Login.jsx", "JavaScript JSX", 0, 0, 0, 0, 215, 0, 0, 3, 21, 239
+"c:\Users\SKL\Desktop\Integradora\int-line\src\pages\ProtectedRoutes.jsx", "JavaScript JSX", 0, 0, 0, 0, 19, 0, 0, 2, 6, 27
+"c:\Users\SKL\Desktop\Integradora\int-line\src\pages\Res_1.jsx", "JavaScript JSX", 0, 0, 0, 0, 122, 0, 0, 19, 27, 168
+"c:\Users\SKL\Desktop\Integradora\int-line\src\pages\Res_2.jsx", "JavaScript JSX", 0, 0, 0, 0, 62, 0, 0, 0, 12, 74
+"c:\Users\SKL\Desktop\Integradora\int-line\vite.config.js", "JavaScript", 0, 5, 0, 0, 0, 0, 0, 1, 2, 8
+"Total", "-", 10781, 50, 89, 5, 3273, 8, 16, 120, 492, 14834

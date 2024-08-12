@@ -123,6 +123,7 @@ export const TaskContextProvider = ({ children }) => {
       setInfoDg([]);
       const response = await getInfoDg(idpa, iddi);
       setInfoDg(response.data)
+      
     } catch (error) {
       console.log(error)
     }
