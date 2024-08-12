@@ -94,11 +94,11 @@ const Home = () => {
         </Div4>
         <Div5>
         <Slider {...settings}>
-      <HomeF text="“La tecnología en las manos adecuadas puede transformar el mundo.”" text1="Oscar S." text2="Desarrollador" />
-      <HomeF text="“Nos propusimos una meta y trabajamos incansablemente hasta alcanzarla.”" text1="Guillermo G." text2="Diseñador" />
-      <HomeF text="“El apoyo mutuo es fundamental para el progreso de la sociedad.”" text1="Alexis R." text2="Líder" />
-      <HomeF text="“El trabajo en equipo y la colaboración son clave para el éxito.”" text1="Kevin R." text2="Base de datos" />
-    </Slider>
+            <HomeF text="“La tecnología en las manos adecuadas puede transformar el mundo.”" text1="Oscar S." text2="Desarrollador" />
+            <HomeF text="“Nos propusimos una meta y trabajamos incansablemente hasta alcanzarla.”" text1="Guillermo G." text2="Diseñador" />
+            <HomeF text="“El apoyo mutuo es fundamental para el progreso de la sociedad.”" text1="Alexis V." text2="Líder" />
+            <HomeF text="“El trabajo en equipo y la colaboración son clave para el éxito.”" text1="Kevin R." text2="Base de datos" />
+        </Slider>
         </Div5>  
     </Div1>
     <Footer />
