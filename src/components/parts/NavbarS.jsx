@@ -31,7 +31,7 @@ const NavbarS = ({NS}) => {
           <Img2 loading='lazy' src='/img/Logo.png'></Img2>
         </Div12>
         <Div13>
-          <ButtonSC onClick={onButtonClick}>Cerrar Sesion</ButtonSC>
+          <ButtonSC onClick={onButtonClick}>Cerrar Sesión</ButtonSC>
         </Div13>
       </Boxside>
     <Overlay isOpen={isOpen} onClick={toggleSidenav} />

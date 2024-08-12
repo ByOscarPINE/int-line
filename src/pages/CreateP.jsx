@@ -157,7 +157,7 @@ const Input = styled.input`
 
 const DatosNS = [
     { toNS: '/ListH', TextNS: 'Home', srcNS: '/img/home.svg'},
-    { toNS: '/CreateP', TextNS: 'Crear', srcNS: '/img/create.svg', backgroundColor: '#F2F2F2'},
+    { toNS: '/CreateP', TextNS: 'Registrar', srcNS: '/img/create.svg', backgroundColor: '#F2F2F2'},
 ]
 
 const Div2 = styled.div`

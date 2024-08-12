@@ -290,6 +290,7 @@ const Div1 = styled.div`
 `
 
 const Div2 = styled.div`
+    width: calc(100vw - 256px);
     text-align: center;
 `
 

@@ -25,7 +25,7 @@ const AsideI = () => {
             <PI>Peso: {InfoDg.Peso} kg</PI>
             <PI>Estatura: {InfoDg.Estatura} cm</PI>
             <PI>Temperatura: {InfoDg.Temperatura} </PI>
-            <PI>Presion arterial: {InfoDg.Presion_Arterial}</PI>
+            <PI>Presion arterial: {InfoDg.Presion_Arterial} mmHg</PI>
             <PI>Pulso: {InfoDg.Pulso} </PI>
             <PI>Sintomas: 
                 {(InfoDg.Sintoma_1 !== '') && (
