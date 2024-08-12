@@ -139,9 +139,6 @@ const AsideI = () => {
                      </>
                 )}
             </PI>   
-            <PI>Otros:
-                
-            </PI>
             <PI>Otros: 
                 {(InfoDg.Artritis === 1) && (
                     <>
