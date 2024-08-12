@@ -17,8 +17,6 @@ const AsideI = () => {
     if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
       Edad--;
     }
-
-    console.log(InfoDg);
   return (
     <Div1>
         <P>Paciente</P>
@@ -34,8 +32,7 @@ const AsideI = () => {
             <PI>Presion arterial: {InfoDg.Presion_Arterial}</PI>
             <PI>Pulso: {InfoDg.Pulso} </PI>
             <PI>Sintomas: 
-                <br></br>
-                {InfoDg.Sintoma_1 && (
+                {(InfoDg.Sintoma_1 !== '') && (
                     <>
                         <br/>
                         * {InfoDg.Sintoma_1}
@@ -128,56 +125,72 @@ const AsideI = () => {
                 
                 
             </PI>
+            <PI>Alergias:
+                {(InfoDg.alergias !== null || InfoDg.alergias !== '') && (
+                     <>
+                        <br></br>
+                            *Ninguna
+                     </>
+                )}
+                {InfoDg.alergias && (
+                     <>
+                        <br></br>
+                            {InfoDg.alergias}
+                     </>
+                )}
+            </PI>   
+            <PI>Otros:
+                
+            </PI>
             <PI>Otros: 
-                {/* {InfoDg.Artritis === 1 (
+                {(InfoDg.Artritis === 1) && (
                     <>
                         <br/>
-                        * Artritis
+                            * Artritis
                     </>
-                )}*/}
-                {/* {InfoDg.Asma && (
+                )}
+                {(InfoDg.Asma === 1) && (
                     <>
                         <br/>
                         * Asma
                     </>
-                )} */}
-                {/*}
-                {InfoDg.Diabetes === 1 (
+                )}
+                {(InfoDg.Diabetes === 1) && (
                     <>
                         <br/>
                         * Diabetes
                     </>
                 )}
-                {InfoDg.Epilepsia === 1 (
+                {(InfoDg.Epilepsia === 1) && (
                     <>
                         <br/>
                         * Epilepsia
                     </>
                 )}
-                {InfoDg.Gota === 1 (
+                {(InfoDg.Gota === 1) && (
                     <>
                         <br/>
                         * Gota
                     </>
                 )}
-                {InfoDg.Hipertension === 1 (
+                {(InfoDg.Hipertension === 1) && (
                     <>
                         <br/>
                         * Hipertension
                     </>
                 )}
-                {InfoDg.Neumonia === 1 (
+                {(InfoDg.Neumonia === 1) && (
                     <>
                         <br/>
                         * Neumonia
                     </>
                 )}
-                {InfoDg.Obesidad === 1 (
+                {(InfoDg.Obesidad === 1) && (
                     <>
                         <br/>
                         * Obesidad
                     </>
-                )} */}
+                )}
             </PI>
         </Box>
     </Div1>

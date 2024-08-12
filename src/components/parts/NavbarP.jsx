@@ -45,7 +45,7 @@ const Div4 = styled.div`
   width: 40%;
   justify-content: center;
   display: flex;
-  gap: 48px;
+  gap: 15px;
 
   &:hover > * {
     filter: blur(4px);
@@ -64,7 +64,7 @@ const Div4 = styled.div`
 `
 
 const H1 = styled.h1`
-  font-size: 20px;
+  font-size: 30px;
   margin-left: 80px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Button = styled.button`
-    height: 52px;
+    height: auto;
+    min-height: 52px;
     width: auto;
     border-radius: 8px;
 

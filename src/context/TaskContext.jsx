@@ -177,10 +177,8 @@ export const TaskContextProvider = ({ children }) => {
 
   const getDg = async function (datos) {
     try {
-      console.log(datos)
       const response = await getDiagg(datos);
       setEnfermedad(response.data)
-      console.log(response)
     } catch (error) {
       
     }

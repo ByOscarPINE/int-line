@@ -12,7 +12,7 @@ import ButtonMS from '../components/buttons/ButtonMS'
 
 const Diagnostic = () => {
     const {id} = useParams();
-    const {Pacientes, inserDiagnostic ,getDiag, validarLetrasYEspacios, validarNumeros, getDg, getSint, Sintomas} = useTasks();
+    const {Pacientes, inserDiagnostic ,getDiag, validarLetrasYEspacios, validarNumeros, getSint, Sintomas} = useTasks();
     const { register, handleSubmit, formState: { isSubmitting } } = useForm();
     const formRef = useRef(null);
 
@@ -121,7 +121,7 @@ const Diagnostic = () => {
       }
 
       if(values.neumonia === true){
-        if(combinedObj.descripciones.includes("Neumonia") || combinedObj.descripciones.includes("neumonía")){         
+        if(combinedObj.descripciones.includes("Neumonia") || combinedObj.descripciones.includes("neumonia")){         
         }
         else{
           combinedObj.descripciones.push("Neumonia");
@@ -167,9 +167,6 @@ const Diagnostic = () => {
 //       console.log(descripciones);
 //       console.log(inputs1);
       const response = await inserDiagnostic(combinedObj, id);
-      console.log(combinedObj.descripciones);
-      
-      getDg(combinedObj.descripciones);
 
       if (response.status === 200) {
         getDiag(id);

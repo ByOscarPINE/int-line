@@ -20,7 +20,6 @@ const Res_1 = () => {
     useEffect (() => {
       try {
         getHisDg(id, idd);
-        console.log('Loading Diagnostic');
       } catch (error) {
         console.log(error);
       }

@@ -18,7 +18,8 @@ const ButtonLD = ({textLD, LDref, onClickk, submit}) => {
 export default ButtonLD
 
 const Button = styled.button`
-    height: 52px;
+    height: auto;
+    min-height: 52px;
     width: auto;
     border-radius: 8px;
     background-color: #000000;

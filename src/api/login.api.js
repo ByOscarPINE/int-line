@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const URL = 'https://backendint-line-production.up.railway.app'
+const URL = 'http://localhost:4000'
+
+// const URL = 'https://backendint-line-production.up.railway.app'
 
 export const loginRequest = async (user) => 
   await axios.post(`${URL}/login`, user);
