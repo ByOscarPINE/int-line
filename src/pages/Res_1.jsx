@@ -269,7 +269,7 @@ const Res_1 = () => {
             <AsideI />
             <AsideOD />
           </Box>
-          <DownloadButton onClick={generatePDF}>Generar PDF</DownloadButton>
+          <DownloadButton onClick={generatePDF}>Imprimir Resultado</DownloadButton>
         </Div1>
     </>
   )
