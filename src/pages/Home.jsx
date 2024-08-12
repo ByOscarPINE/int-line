@@ -7,6 +7,9 @@ import HomeS from '../components/parts/HomeS.jsx'
 import HomeD from '../components/parts/HomeD.jsx'
 import HomeF from '../components/parts/HomeF.jsx'
 import NavbarPM from '../components/parts/NavbarPM.jsx'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const Div1 = styled.div`
     margin-top: 164px;
@@ -56,11 +59,9 @@ const Div4 = styled.div`
 const Div5 = styled.div`
     margin-top: 60px;
     margin-bottom: 52px;
-    width: 100%;
+    width: 80%;
+    max-width: 80%;
     height: 252px;
-    display: flex;
-    justify-content: center;
-    gap: 32px;
 
     @media (max-width: 767px) {
     display: none;
@@ -69,6 +70,13 @@ const Div5 = styled.div`
 
 
 const Home = () => {
+    const settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 2,
+      };
 
   return (
     <>
@@ -85,10 +93,12 @@ const Home = () => {
             <HomeD></HomeD>
         </Div4>
         <Div5>
-            <HomeF text="“La tecnología en las manos adecuadas puede transformar el mundo.”" text1="Oscar S." text2="Desarrollador"></HomeF>
-            <HomeF text="“Nos propusimos una meta y trabajamos incansablemente hasta alcanzarla.”" text1="Guillermo G." text2="Diseñador"></HomeF>
-            <HomeF text="“El apoyo mutuo es fundamental para el progreso de la sociedad.”" text1="Alexis R." text2="Líder"></HomeF>
-            <HomeF text="“El trabajo en equipo y la colaboración son clave para el éxito.”" text1="Kevin R." text2="Base de datos"></HomeF>
+        <Slider {...settings}>
+      <HomeF text="“La tecnología en las manos adecuadas puede transformar el mundo.”" text1="Oscar S." text2="Desarrollador" />
+      <HomeF text="“Nos propusimos una meta y trabajamos incansablemente hasta alcanzarla.”" text1="Guillermo G." text2="Diseñador" />
+      <HomeF text="“El apoyo mutuo es fundamental para el progreso de la sociedad.”" text1="Alexis R." text2="Líder" />
+      <HomeF text="“El trabajo en equipo y la colaboración son clave para el éxito.”" text1="Kevin R." text2="Base de datos" />
+    </Slider>
         </Div5>  
     </Div1>
     <Footer />
